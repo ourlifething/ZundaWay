@@ -8,7 +8,7 @@ public class ZundaController : MonoBehaviour
     float fallspeed;
     void Start()
     {
-        this.fallspeed = 0.01f + 0.1f * Random.value;
+        this.fallspeed = 0.01f + 0.1f * Random.value * Time.deltaTime;
     }
     void Update()
     {
