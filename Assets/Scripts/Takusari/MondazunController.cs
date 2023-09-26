@@ -10,12 +10,20 @@ public class MondazunController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //矢印キーで移動
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
         transform.position += new Vector3(x, y, 0) * Time.deltaTime * speed;
     }
+
+    //接触した際の処理
+    void OnTriggerEnter2D(Collider2D coll) {
+        GameObject.Find("Canvas").GetComponent<UIController> ().AddScore();
+
+        Destroy(coll.gameObject);
+    }
+
 }

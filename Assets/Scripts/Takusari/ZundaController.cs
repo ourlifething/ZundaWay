@@ -6,9 +6,10 @@ using UnityEngine;
 public class ZundaController : MonoBehaviour
 {
     float fallspeed;
+    public float speed;
     void Start()
     {
-        this.fallspeed = 0.01f + 0.1f * Random.value * Time.deltaTime;
+        this.fallspeed = 0.01f + speed * Time.deltaTime;
     }
     void Update()
     {
