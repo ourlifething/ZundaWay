@@ -9,10 +9,11 @@ public class ZundaController : MonoBehaviour
     public float speed;
     void Start()
     {
-        this.fallspeed = 0.01f + speed * Time.deltaTime;
+        
     }
     void Update()
     {
+        this.fallspeed = 0.01f + speed * Time.deltaTime;
         transform.Translate(0, -fallspeed, 0);
         
         if (transform.position.y < -5.5f){
