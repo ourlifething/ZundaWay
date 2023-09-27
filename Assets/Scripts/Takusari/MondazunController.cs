@@ -5,6 +5,12 @@ using UnityEngine;
 public class MondazunController : MonoBehaviour
 {
     public float speed;
+    const int DefaultLife = 3;
+    int life = DefaultLife;
+    public int Life()
+    {
+        return life;
+    }
     void Start()
     {
         
@@ -24,6 +30,10 @@ public class MondazunController : MonoBehaviour
         GameObject.Find("Canvas").GetComponent<UIController> ().AddScore();
 
         Destroy(coll.gameObject);
+    }
+    void OnTriggerEnter2D(){
+        life --;
+        Destroy(gameObject);
     }
 
 }

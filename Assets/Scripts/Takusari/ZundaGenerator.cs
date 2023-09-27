@@ -5,9 +5,10 @@ using UnityEngine;
 public class ZundaGenerator : MonoBehaviour
 {
     public GameObject zundaPrefab;
+    public float genSpeed;
     void Start()
     {
-        InvokeRepeating("GenZunda",1 ,1);
+        InvokeRepeating("GenZunda", 1, genSpeed);
     }
 
     void GenZunda(){
