@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeController : MonoBehaviour
 {
@@ -10,5 +12,7 @@ public class LifeController : MonoBehaviour
     void Update()
     {
         lifePanel.UpdateLife(mondazun.Life());
+        
     }
+    
 }
