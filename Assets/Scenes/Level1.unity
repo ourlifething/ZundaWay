@@ -717,6 +717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mondazun: {fileID: 115461334}
   generator: {fileID: 819719052}
+  ankoGene: {fileID: 2131050071}
+  normaScore: 0
 --- !u!4 &1107822946
 Transform:
   m_ObjectHideFlags: 0

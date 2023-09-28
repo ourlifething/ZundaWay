@@ -9,17 +9,14 @@ public class ZundaGenerator : MonoBehaviour
     bool steerActive = false;
     void Start()
     {
-        InvokeRepeating("GenZunda", 1, genSpeed);
+        
     }
     
-    public void SetSteerActive(bool steerActive)
-    {
-        if (steerActive == false){
-            this.steerActive = false;
-        }
-        if (steerActive == true){
-            this.steerActive = true;
-        }
+    public void geneStart(){
+        InvokeRepeating("GenZunda", 1, genSpeed);
+    }
+    public void geneStop(){
+        CancelInvoke();
     }
 
     void Update() {

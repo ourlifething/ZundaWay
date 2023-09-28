@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     State state;
     public MondazunController mondazun;
     public ZundaGenerator generator;
+    public ZundaGenerator ankoGene;
+    public int normaScore;
     void Start()
     {
         Ready();
@@ -40,24 +42,35 @@ public class GameController : MonoBehaviour
     {
         state = State.Ready;
         mondazun.SetSteerActive(false);
-        generator.SetSteerActive(false);
-        Debug.Log("Ready");
+        generator.geneStop();
+        ankoGene.geneStop();
     }
 
     void GameStart()
     {
-        Debug.Log("Start");
         state = State.Play;
 
         mondazun.SetSteerActive(true);
-        generator.SetSteerActive(true);
+        generator.geneStart();
+        ankoGene.geneStart();
     }
     void GameOver()
     {
         state = State.GameOver;
 
         mondazun.SetSteerActive(false);
-        generator.SetSteerActive(false);
+        generator.geneStop();
+        ankoGene.geneStop();
+        GameObject[] tagObj1 = GameObject.FindGameObjectsWithTag("Zunda");
+        foreach (GameObject obj in tagObj1)
+        {
+            Destroy(obj);
+        }
+        GameObject[] tagObj2 = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject obj in tagObj2)
+        {
+            Destroy(obj);
+        }
     }
     void Reload()
     {
