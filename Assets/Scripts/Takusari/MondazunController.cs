@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MondazunController : MonoBehaviour
 {
@@ -41,7 +40,6 @@ public class MondazunController : MonoBehaviour
             GameObject.Find("Canvas").GetComponent<UIController>().AddScore();
 
             Destroy(coll.gameObject);
-            Debug.Log("う、うめえ");
         }
         if (coll.gameObject.tag == "Enemy")
         {
@@ -49,17 +47,6 @@ public class MondazunController : MonoBehaviour
             Destroy(coll.gameObject);
             Debug.Log("ぐえー");
         }
-        if (life <= 0)
-        {
-            Debug.Log("バカなぁぁぁぁぁ");
-            enabled = false;
-            //Invoke("FalledMiss",2.0f);
-        }
-        /*void FalledMiss()
-        {
-            SceneManager.LoadScene("Miss");
-        }
-        */
     }
 
 }
