@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour
     public ZundaGenerator generator;
     public ZundaGenerator ankoGene;
     public UIController ucon;
-    public ScrollScript scSp;
 
     public int normaScore;
     public Text normaText;
