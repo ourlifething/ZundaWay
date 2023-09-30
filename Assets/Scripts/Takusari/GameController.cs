@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour
     public int normaScore;
     public Text normaText;
     public float count;
-    public float disCount;
     public Text countText;
     public Text startText;
     public Text gameOverText;
