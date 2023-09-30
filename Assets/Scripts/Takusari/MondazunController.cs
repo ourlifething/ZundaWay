@@ -67,6 +67,7 @@ public class MondazunController : MonoBehaviour
             GameObject.Find("Canvas").GetComponent<UIController>().AddScore();
 
             Destroy(coll.gameObject);
+            damageSe[2].Play();
         }
         if (coll.gameObject.tag == "Enemy")
         {
