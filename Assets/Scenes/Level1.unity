@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  ExplosionEffect: {fileID: 7014243270456719204, guid: acbb86aa59742d440a945de5a6b1e111, type: 3}
 --- !u!212 &115461335
 SpriteRenderer:
   m_ObjectHideFlags: 0
