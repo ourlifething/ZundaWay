@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  ExplosionEffect: {fileID: 7014243270456719204, guid: acbb86aa59742d440a945de5a6b1e111, type: 3}
 --- !u!212 &115461335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -980,6 +981,7 @@ MonoBehaviour:
   mondazun: {fileID: 115461334}
   generator: {fileID: 819719052}
   ankoGene: {fileID: 2131050071}
+  kiriGene: {fileID: 0}
   ucon: {fileID: 1519065951}
   normaScore: 50
   normaText: {fileID: 147807405}
