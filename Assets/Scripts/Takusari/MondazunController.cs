@@ -63,17 +63,14 @@ public class MondazunController : MonoBehaviour
             GameObject.Find("Canvas").GetComponent<UIController>().AddScore();
 
             Destroy(coll.gameObject);
-            Debug.Log("う、うめえ");
         }
         if (coll.gameObject.tag == "Enemy")
         {
             life--;
             Destroy(coll.gameObject);
-            Debug.Log("ぐえー");
         }
         if (life <= 0)
         {
-            Debug.Log("バカなぁぁぁぁぁ");
             enabled = false;
             miss = true;
             //Invoke("FalledMiss",2.0f);

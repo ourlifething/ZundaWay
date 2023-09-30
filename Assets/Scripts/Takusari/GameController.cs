@@ -19,11 +19,13 @@ public class GameController : MonoBehaviour
     public MondazunController mondazun;
     public ZundaGenerator generator;
     public ZundaGenerator ankoGene;
+    public KiritanGenerator kiriGene;
     public UIController ucon;
 
     public int normaScore;
     public Text normaText;
     public float count;
+    public float disCount;
     public Text countText;
     public Text startText;
     public Text gameOverText;
@@ -43,7 +45,7 @@ public class GameController : MonoBehaviour
                 break;
             case State.Play:
                 startText.text = "Start!";
-                Invoke(nameof(DesText),1f);
+                
                 Destroy(normaText);
                 count -= Time.deltaTime;
                 countText.text = "あと" + count.ToString("f1") + "m";
@@ -68,10 +70,13 @@ public class GameController : MonoBehaviour
     void GameStart()
     {
         state = State.Play;
+        startText.gameObject.SetActive(true);
+        Invoke("FalText",1);
 
         mondazun.SetSteerActive(true);
         generator.geneStart();
         ankoGene.geneStart();
+        kiriGene.geneStart();
     }
     void GameOver()
     {
@@ -94,6 +99,7 @@ public class GameController : MonoBehaviour
         mondazun.SetSteerActive(false);
         generator.geneStop();
         ankoGene.geneStop();
+        kiriGene.geneStop();
         GameObject[] tagObj1 = GameObject.FindGameObjectsWithTag("Zunda");
         foreach (GameObject obj in tagObj1)
         {
@@ -111,8 +117,7 @@ public class GameController : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
-    void DesText()
-    {
+    void FalText(){
         startText.gameObject.SetActive(false);
     }
 }
