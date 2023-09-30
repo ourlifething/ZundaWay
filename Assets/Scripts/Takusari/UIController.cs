@@ -7,6 +7,10 @@ public class UIController : MonoBehaviour
 {
     int score = 0;
     GameObject scoreText;
+    public int getScore()
+    {
+        return this.score;
+    }
 
     public void AddScore()
     {
