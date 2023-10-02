@@ -1499,7 +1499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107822946}
-  - component: {fileID: 1107822945}
+  - component: {fileID: 1107822947}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1507,29 +1507,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1107822945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107822944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7154af43022e9468d9c8dbe3cb4192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mondazun: {fileID: 115461334}
-  generator: {fileID: 819719052}
-  ankoGene: {fileID: 2131050071}
-  kiriGene: {fileID: 0}
-  ucon: {fileID: 1519065951}
-  normaScore: 50
-  normaText: {fileID: 147807405}
-  count: 30
-  countText: {fileID: 395330370}
-  startText: {fileID: 1424712308}
-  gameOverText: {fileID: 1699851728}
 --- !u!4 &1107822946
 Transform:
   m_ObjectHideFlags: 0
@@ -1545,6 +1522,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1107822947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107822944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c6b2ee191ebd6428761314e4787e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mondazun: {fileID: 115461334}
+  generator: {fileID: 819719052}
+  ankoGene: {fileID: 2131050071}
+  ucon: {fileID: 1519065951}
+  normaScore: 30
+  normaText: {fileID: 147807405}
+  count: 30
+  countText: {fileID: 395330370}
+  startText: {fileID: 1424712308}
+  gameOverText: {fileID: 1699851728}
 --- !u!4 &1255185369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7723022136703297285, guid: d61bd0b65bf7e1447897f57f4397a13b, type: 3}
@@ -1992,11 +1991,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 640, y: 1136}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -2683,7 +2682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zundaPrefab: {fileID: 5090018524426679827, guid: 21afba09d51055c4e80e158e400bb902, type: 3}
-  genSpeed: 3
+  genSpeed: 3.3
 --- !u!4 &2131050072
 Transform:
   m_ObjectHideFlags: 0
