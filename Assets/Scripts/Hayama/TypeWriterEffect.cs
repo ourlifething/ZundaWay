@@ -4,82 +4,64 @@ using UnityEngine;
 
 public class TypeWriterEffect : MonoBehaviour
 {
-    // 対象のテキスト
     [SerializeField] private TMP_Text _text;
-    
-    // 次の文字を表示するまでの時間[s]
     [SerializeField] private float _delayDuration = 0.1f;
 
     private Coroutine _showCoroutine;
-    private int currentIndex = 0; // 現在の文章のインデックス
-    private string[] _texts; // 異なる文章を格納する配列
+    private int currentIndex = 0;
+    private string[] _texts;
 
-    // Startメソッドで文章の初期化を行う
     void Start()
     {
-        // ゲーム開始時にテキストを非表示にする
         _text.maxVisibleCharacters = 0;
-
-        // 表示する文章の配列を初期化
         _texts = new string[]
         {
-            "このゲームは、すんだもんが東北ずん子の元へずんだ餅を届けるために奮闘するゲームです。降りかかる試練を避けて、たくさんのずんだ餅を獲得しましょう。",
-            "xxxxxxxxxxxxxxxxx",
+            "ずん子のもとへずんだ餅をたくさん届けたいのだ！",
+            "x1ステージごとに目標の個数を時間内に集めるのだ",
+            "ずんだ以外のものに当たると体力枝豆が減っていくのだ",
+            "体力が０にならないように気を付けて進んでほしいのだ",
+            "ステージが進むごとに妨害が増えるのだ",
+            "僕のこと痛めつけないでステージをクリアしてほしいのだ",
             "VOICEVOX:ずんだもん"
         };
+
+        Debug.Log(_texts.Length);
     }
 
     public void Show()
     {
-        // 前回の演出処理が走っていたら、停止
-        if (_showCoroutine != null)
+        if (_showCoroutine != null && currentIndex < _texts.Length){
             StopCoroutine(_showCoroutine);
-
-        // １文字ずつ表示する演出のコルーチンを実行する
-        _showCoroutine = StartCoroutine(ShowCoroutine());
+        }
+        if(currentIndex < _texts.Length){
+            _showCoroutine = StartCoroutine(ShowCoroutine(currentIndex)); // コルーチンに現在の文章のインデックスを渡す
+        }
     }
 
-    // １文字ずつ表示する演出のコルーチン
-    private IEnumerator ShowCoroutine()
+    private IEnumerator ShowCoroutine(int textIndex)
     {
-        // 待機用コルーチン
-        // GC Allocを最小化するためキャッシュしておく
-        var delay = new WaitForSeconds(_delayDuration);
 
-        // 現在の文章を設定
-        if (currentIndex < _texts.Length)
+        if (textIndex < _texts.Length)
         {
-            _text.text = _texts[currentIndex];
+            _text.text = _texts[textIndex];
             currentIndex++;
         }
         else
         {
-            // 表示する文章がない場合はコルーチンを終了
             yield break;
         }
 
-        // テキスト全体の長さ
+        var delay = new WaitForSeconds(_delayDuration);
         var length = _text.text.Length;
-        
-        // １文字ずつ表示する演出
+
         for (var i = 0; i < length; i++)
         {
-            // 徐々に表示文字数を増やしていく
             _text.maxVisibleCharacters = i;
-            
-            // 一定時間待機
             yield return delay;
         }
 
-        // 演出が終わったら全ての文字を表示する
         _text.maxVisibleCharacters = length;
 
         _showCoroutine = null;
-    }
-
-    public void OnButtonClick()
-    {
-        // ボタンがクリックされたらテキストを表示する
-        Show();
     }
 }
