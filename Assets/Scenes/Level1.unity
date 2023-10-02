@@ -1180,7 +1180,6 @@ MonoBehaviour:
   normaScore: 50
   normaText: {fileID: 147807405}
   count: 30
-  disCount: 0
   countText: {fileID: 395330370}
   startText: {fileID: 1424712308}
   gameOverText: {fileID: 1699851728}
@@ -2085,7 +2084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zundaPrefab: {fileID: 5090018524426679827, guid: 21afba09d51055c4e80e158e400bb902, type: 3}
-  genSpeed: 3
+  genSpeed: 3.3
 --- !u!4 &2131050072
 Transform:
   m_ObjectHideFlags: 0
