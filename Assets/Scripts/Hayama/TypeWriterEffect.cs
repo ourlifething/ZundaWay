@@ -22,8 +22,7 @@ public class TypeWriterEffect : MonoBehaviour
             "体力が０にならないように気を付けて進んでほしいのだ",
             "ステージが進むごとに妨害が増えるのだ",
             "僕のこと痛めつけないでステージをクリアしてほしいのだ",
-            "VOICEVOX:ずんだもん",
-            "GAME START"
+            "VOICEVOX:ずんだもん"
         };
 
         Debug.Log(_texts.Length);
