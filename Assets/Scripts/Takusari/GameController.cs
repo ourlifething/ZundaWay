@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
                 
                 Destroy(normaText);
                 count -= Time.deltaTime;
-                countText.text = "あと" + count.ToString("f1") + "m";
+                countText.text = "あと" + count.ToString("f1") + "m ";
                 if (mondazun.Miss() || count <= 0) GameOver();
                 break;
             case State.GameOver:
