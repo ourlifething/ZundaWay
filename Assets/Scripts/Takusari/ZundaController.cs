@@ -12,7 +12,7 @@ public class ZundaController : MonoBehaviour
     {
         
     }
-    void Update()
+    void FixedUpdate()
     {
         this.fallspeed = 0.01f + speed * Time.deltaTime;
         transform.Translate(0, -fallspeed, 0);
