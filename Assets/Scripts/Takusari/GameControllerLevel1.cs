@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class GameControllerLevel1 : MonoBehaviour
 {
     enum State
     {
@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour
     public MondazunController mondazun;
     public ZundaGenerator generator;
     public ZundaGenerator ankoGene;
-    public KiritanGenerator kiriGene;
     public UIController ucon;
 
     public int normaScore;
@@ -75,7 +74,6 @@ public class GameController : MonoBehaviour
         mondazun.SetSteerActive(true);
         generator.geneStart();
         ankoGene.geneStart();
-        kiriGene.geneStart();
     }
     void GameOver()
     {
@@ -98,7 +96,6 @@ public class GameController : MonoBehaviour
         mondazun.SetSteerActive(false);
         generator.geneStop();
         ankoGene.geneStop();
-        kiriGene.geneStop();
         GameObject[] tagObj1 = GameObject.FindGameObjectsWithTag("Zunda");
         foreach (GameObject obj in tagObj1)
         {
