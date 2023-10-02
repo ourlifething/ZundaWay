@@ -856,7 +856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107822946}
-  - component: {fileID: 1107822945}
+  - component: {fileID: 1107822947}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -864,29 +864,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1107822945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107822944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7154af43022e9468d9c8dbe3cb4192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mondazun: {fileID: 115461334}
-  generator: {fileID: 819719052}
-  ankoGene: {fileID: 2131050071}
-  kiriGene: {fileID: 1615546806}
-  ucon: {fileID: 1519065951}
-  normaScore: 50
-  normaText: {fileID: 147807405}
-  count: 60
-  countText: {fileID: 395330370}
-  startText: {fileID: 1424712308}
-  gameOverText: {fileID: 1699851728}
 --- !u!4 &1107822946
 Transform:
   m_ObjectHideFlags: 0
@@ -902,6 +879,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1107822947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107822944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60bb606cd2bd7743b6b565c17d690bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mondazun: {fileID: 115461334}
+  generator: {fileID: 819719052}
+  ankoGene: {fileID: 2131050071}
+  kiriGene: {fileID: 1615546806}
+  ghostGene: {fileID: 1868811591}
+  ucon: {fileID: 1519065951}
+  normaScore: 30
+  normaText: {fileID: 147807405}
+  count: 60
+  countText: {fileID: 395330370}
+  startText: {fileID: 1424712308}
+  gameOverText: {fileID: 1699851728}
 --- !u!1 &1299410023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KiritanPrefabL: {fileID: 42311501785461409, guid: e623be4b28010b04282aeb316dddea8d, type: 3}
   KiritanPrefabR: {fileID: 1334299433598827227, guid: d554b010a2dbc1143872ffb77b32555b, type: 3}
-  genSpeed: 2
+  genSpeed: 3
 --- !u!4 &1615546807
 Transform:
   m_ObjectHideFlags: 0
@@ -1549,6 +1550,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1868811590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1868811592}
+  - component: {fileID: 1868811591}
+  m_Layer: 0
+  m_Name: GeneGhost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1868811591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868811590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8abde9ebee8f1d46b30382ab968cb44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GhostPrefabL: {fileID: 2832361307938247073, guid: f63fcfea17e57894787a3990bf780d9b, type: 3}
+  GhostPrefabR: {fileID: 2640601649967615016, guid: 69bf8086a23d7e2408b1fa00083505ac, type: 3}
+  GhostPrefabF: {fileID: 1140794160567542181, guid: b50c6440dd1fc7e428d2c2a4f78914cf, type: 3}
+  genSpeed: 2
+--- !u!4 &1868811592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868811590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2131050070
 GameObject:
   m_ObjectHideFlags: 0

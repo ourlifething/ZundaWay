@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zunda
   - Enemy
+  - Ghost
   layers:
   - Default
   - TransparentFX
