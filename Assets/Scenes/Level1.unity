@@ -157,10 +157,10 @@ RectTransform:
   m_Father: {fileID: 1519065955}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 226.49316, y: 518.2726}
-  m_SizeDelta: {x: 139.6203, y: 68.7772}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -95.506836, y: -53.727417}
+  m_SizeDelta: {x: 139.6203, y: 68.77722}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31587502
 MonoBehaviour:
@@ -1055,10 +1055,10 @@ RectTransform:
   m_Father: {fileID: 1519065955}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240.33946, y: 509.338}
-  m_SizeDelta: {x: 81.8228, y: 81.8229}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 81.66054, y: -62.661987}
+  m_SizeDelta: {x: 81.8228, y: 81.822876}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759305699
 MonoBehaviour:
@@ -1693,10 +1693,10 @@ RectTransform:
   m_Father: {fileID: 1519065955}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.2, y: 527.32007}
-  m_SizeDelta: {x: 130.0012, y: 45.369}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.2, y: -44.67993}
+  m_SizeDelta: {x: 130.0012, y: 45.36902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430427256
 MonoBehaviour:
@@ -2258,10 +2258,10 @@ RectTransform:
   m_Father: {fileID: 1519065955}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -186.59999, y: 527.67}
-  m_SizeDelta: {x: 91.7017, y: 44.6665}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 135.40001, y: -44.330017}
+  m_SizeDelta: {x: 91.70169, y: 44.666504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1967278564
 MonoBehaviour:
