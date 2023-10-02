@@ -7,6 +7,8 @@ public class MondazunController : MonoBehaviour
 {
     public float speed;
     bool steerActive = false;
+    AudioSource[] damageSe;
+
     public bool SteerActive()
     {
         return steerActive;
@@ -24,8 +26,10 @@ public class MondazunController : MonoBehaviour
     {
         return life;
     }
+    public GameObject ExplosionEffect;
     void Start()
     {
+        damageSe = GetComponents<AudioSource>();
 
     }
 
@@ -66,8 +70,11 @@ public class MondazunController : MonoBehaviour
         }
         if (coll.gameObject.tag == "Enemy")
         {
+            Instantiate(ExplosionEffect,coll.gameObject.transform.position,Quaternion.identity);
             life--;
             Destroy(coll.gameObject);
+            damageSe[0].Play();
+            damageSe[1].Play();
         }
         if (life <= 0)
         {

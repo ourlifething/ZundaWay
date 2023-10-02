@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  ExplosionEffect: {fileID: 7014243270456719204, guid: acbb86aa59742d440a945de5a6b1e111, type: 3}
 --- !u!212 &115461335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -678,7 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zundaPrefab: {fileID: 2907342801517243950, guid: 7617aab920a90064b8d16dcdb750b858, type: 3}
-  genSpeed: 1
+  genSpeed: 0.4
 --- !u!4 &819719053
 Transform:
   m_ObjectHideFlags: 0
@@ -880,9 +881,9 @@ MonoBehaviour:
   ankoGene: {fileID: 2131050071}
   kiriGene: {fileID: 1615546806}
   ucon: {fileID: 1519065951}
-  normaScore: 20
+  normaScore: 30
   normaText: {fileID: 147807405}
-  count: 30
+  count: 45
   disCount: 0
   countText: {fileID: 395330370}
   startText: {fileID: 1424712308}
@@ -1579,7 +1580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zundaPrefab: {fileID: 5090018524426679827, guid: 21afba09d51055c4e80e158e400bb902, type: 3}
-  genSpeed: 3
+  genSpeed: 3.3
 --- !u!4 &2131050072
 Transform:
   m_ObjectHideFlags: 0
