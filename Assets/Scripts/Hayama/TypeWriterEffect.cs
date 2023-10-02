@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TypeWriterEffect : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class TypeWriterEffect : MonoBehaviour
             "VOICEVOX:ずんだもん"
         };
 
-        Debug.Log(_texts.Length);
     }
 
     public void Show()
@@ -61,6 +61,9 @@ public class TypeWriterEffect : MonoBehaviour
         }
 
         _text.maxVisibleCharacters = length;
+        
+        yield return new WaitForSeconds(1f); 
+        SceneManager.LoadScene("Start");
 
         _showCoroutine = null;
     }
