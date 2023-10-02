@@ -18,6 +18,8 @@ public class MondazunController : MonoBehaviour
     {
         return miss;
     }
+    const float stunCount = 1.0f;
+    float recoverTime = 0.0f;
     float xLimit = 2.5f;
     float yLimit = 5f;
     const int DefaultLife = 3;
@@ -77,6 +79,13 @@ public class MondazunController : MonoBehaviour
             audioLevel1[0].Play();
             audioLevel1[1].Play();
         }
+        if (coll.gameObject.tag == "Ghost")
+        {
+            Debug.Log("Stun");
+            steerActive = false;
+            Destroy(coll.gameObject);
+            Invoke("Recover", 1.0f);
+        }
         if (life <= 0)
         {
             enabled = false;
@@ -90,6 +99,14 @@ public class MondazunController : MonoBehaviour
             SceneManager.LoadScene("Miss");
         }
         */
+        
+        
     }
+    void Recover()
+        {
+            Debug.Log("Recover");
+            steerActive = true;
+            return;
+        }
 
 }
