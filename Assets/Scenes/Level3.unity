@@ -1356,8 +1356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd45677cd9ad5874eba42c502731925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KiritanPrefabL: {fileID: 42311501785461409, guid: e623be4b28010b04282aeb316dddea8d, type: 3}
-  KiritanPrefabR: {fileID: 1334299433598827227, guid: d554b010a2dbc1143872ffb77b32555b, type: 3}
+  KiritanPrefabL: {fileID: 2914801437639028910, guid: a1a2c1706252c2949a56854b54b25c40, type: 3}
+  KiritanPrefabR: {fileID: 1483541042958894196, guid: 468d694b9c6d58b448ae28b7ca5e3de0, type: 3}
   genSpeed: 3
 --- !u!4 &1615546807
 Transform:

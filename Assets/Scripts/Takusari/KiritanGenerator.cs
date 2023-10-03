@@ -37,7 +37,6 @@ public class KiritanGenerator : MonoBehaviour
         if (genInt > 0)
         {
             Instantiate(KiritanPrefabR, new Vector3(6, Random.Range(-4.5f,5.5f), 0), Quaternion.identity);
-            Debug.Log("Gene");
         }
     }
 }
