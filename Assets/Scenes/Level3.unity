@@ -2192,9 +2192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8abde9ebee8f1d46b30382ab968cb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GhostPrefabL: {fileID: 2832361307938247073, guid: f63fcfea17e57894787a3990bf780d9b, type: 3}
-  GhostPrefabR: {fileID: 2640601649967615016, guid: 69bf8086a23d7e2408b1fa00083505ac, type: 3}
-  GhostPrefabF: {fileID: 1140794160567542181, guid: b50c6440dd1fc7e428d2c2a4f78914cf, type: 3}
+  GhostPrefabL: {fileID: 7063159907975599530, guid: 911c6fca737ee874188f3d19b17a5a27, type: 3}
+  GhostPrefabR: {fileID: 8747476620326289184, guid: add45ad80765ffe4797bfa4fe6c1df80, type: 3}
+  GhostPrefabF: {fileID: 6105806499716676644, guid: d478ef10c86faaf4f8ffe306958a370f, type: 3}
   genSpeed: 2
 --- !u!4 &1868811592
 Transform:
