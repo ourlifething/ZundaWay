@@ -9,8 +9,11 @@ public class GhostGenerator : MonoBehaviour
     public GameObject GhostPrefabF;
     public float genSpeed;
     bool steerActive = false;
+    AudioSource[] audioLevel3;
+
     void Start()
     {
+        audioLevel3 = GetComponents<AudioSource>();
 
     }
 
@@ -35,16 +38,19 @@ public class GhostGenerator : MonoBehaviour
         {
             Instantiate(GhostPrefabL, new Vector3(-8, Random.Range(-3.5f,4.5f), 0), Quaternion.identity);
             Debug.Log("Left");
+            audioLevel3[0].Play();
         }
         if (genInt == 1)
         {
             Instantiate(GhostPrefabR, new Vector3(8, Random.Range(-3.5f,4.5f), 0), Quaternion.identity);
             Debug.Log("Right");
+            audioLevel3[0].Play();
         }
         if(genInt == 2)
         {
             Instantiate(GhostPrefabF, new Vector3(-2.5f + 4 * Random.value, 10, 0),Quaternion.identity);
             Debug.Log("Front");
+            audioLevel3[0].Play();
         }
     }
 }
