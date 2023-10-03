@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameControllerLevel1 : MonoBehaviour
 {
@@ -29,6 +30,10 @@ public class GameControllerLevel1 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
+    void Awake()
+    {
+        DOTween.Init();
+    }
     void Start()
     {
         Ready();
@@ -65,8 +70,11 @@ public class GameControllerLevel1 : MonoBehaviour
 
     void Ready()
     {
+        
         state = State.Ready;
-        normaText.text = normaScore.ToString() + "個集めよう！";
+        
+        //normaText.text = normaScore.ToString() + "個集めよう！";
+        normaText.DOText(normaScore.ToString() + "個集めよう！",3f);
 
         mondazun.SetSteerActive(false);
         generator.geneStop();

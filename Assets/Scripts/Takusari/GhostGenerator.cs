@@ -20,7 +20,6 @@ public class GhostGenerator : MonoBehaviour
     public void geneStart()
     {
         InvokeRepeating("GenGhost", 1, genSpeed);
-        Debug.Log("OK");
     }
     public void geneStop()
     {
