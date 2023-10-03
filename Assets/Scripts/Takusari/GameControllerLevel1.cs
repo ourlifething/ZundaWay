@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameControllerLevel1 : MonoBehaviour
 {
@@ -65,7 +66,9 @@ public class GameControllerLevel1 : MonoBehaviour
 
     void Ready()
     {
+        
         state = State.Ready;
+        normaText
         normaText.text = normaScore.ToString() + "個集めよう！";
 
         mondazun.SetSteerActive(false);
