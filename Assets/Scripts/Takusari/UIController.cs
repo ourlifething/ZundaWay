@@ -30,6 +30,6 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
-        scoreText.GetComponent<Text> ().text = "× " + score.ToString("D");
+        scoreText.GetComponent<Text> ().text = "ÁE" + score.ToString("D");
     }
 }
