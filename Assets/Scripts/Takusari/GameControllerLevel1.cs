@@ -30,6 +30,10 @@ public class GameControllerLevel1 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
+    void Awake()
+    {
+        DOTween.Init();
+    }
     void Start()
     {
         Ready();
@@ -68,8 +72,9 @@ public class GameControllerLevel1 : MonoBehaviour
     {
         
         state = State.Ready;
-        normaText
-        normaText.text = normaScore.ToString() + "個集めよう！";
+        
+        //normaText.text = normaScore.ToString() + "個集めよう！";
+        normaText.DOText(normaScore.ToString() + "個集めよう！",3f);
 
         mondazun.SetSteerActive(false);
         generator.geneStop();
