@@ -47,6 +47,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-5838611327110757772
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c0e984a3919adf74bb86ef0aa8919386
+  m_EffectName: Attenuation
+  m_MixLevel: 47847becb0b23c347bebfb915b09fee8
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-5116028688200179045
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -89,6 +103,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1113797691121899394
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SE_kiritanpo
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: a43510f7f13e3e143a558976731300ea
+  m_Children: []
+  m_Volume: c722bdf6b8595354f8aa92b40a4e4234
+  m_Pitch: 9a5a38e96175760479d9710037e4de65
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -5838611327110757772}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -116,6 +149,7 @@ AudioMixerController:
     - 14271cd89797ace41af92a1995127a02
     - 949322fb6c9f8704cad99b7afb1757de
     - 339086a91acd85540a4f71893940ef82
+    - a43510f7f13e3e143a558976731300ea
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -133,10 +167,11 @@ AudioMixerGroupController:
   - {fileID: 6619315507308690026}
   - {fileID: 992754759430143351}
   - {fileID: 3645995099085343087}
-  - {fileID: 2843804517647527885}
   - {fileID: 664444034068086789}
-  - {fileID: 7270270117381860915}
+  - {fileID: -1113797691121899394}
   - {fileID: 5274969599726513437}
+  - {fileID: 2843804517647527885}
+  - {fileID: 7270270117381860915}
   m_Volume: 2478279125f5afe4b9a4ac13b46ad8fc
   m_Pitch: 201862f461cb49841ad51316542b5e89
   m_Send: 00000000000000000000000000000000
@@ -177,7 +212,7 @@ AudioMixerSnapshotController:
     c73621240577b1b41be79cd2c4b68132: -13
     8646a3bd2a93ca9409d035b58e59f7c7: 0.97
     20ced3ee4c5790242b361d489101f1d7: -7.2
-    bdddfbaf562169648ae4898dbf7af5ea: -12
+    bdddfbaf562169648ae4898dbf7af5ea: -15
   m_TransitionOverrides: {}
 --- !u!243 &664444034068086789
 AudioMixerGroupController:
