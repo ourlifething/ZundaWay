@@ -11,7 +11,7 @@ public class GhostControllerL : MonoBehaviour
     {
         targetpos = transform.position;
     }
-    void Update()
+    void FixedUpdate()
     {
         this.runSpeed = 0.01f + speed * Time.deltaTime;
         targetpos.x += runSpeed;

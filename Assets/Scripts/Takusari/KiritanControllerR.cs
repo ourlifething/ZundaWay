@@ -10,7 +10,7 @@ public class KiritanControllerR : MonoBehaviour
     {
         
     }
-    void Update()
+    void FixedUpdate()
     {
         this.runSpeed = -0.01f + speed * Time.deltaTime;
         transform.Translate(runSpeed,0,0);
