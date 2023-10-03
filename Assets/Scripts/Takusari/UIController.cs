@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
     public void AddScore()
     {
         this.score += 1;
-        //Šl“¾‚µ‚½‚¸‚ñ‚¾‚ª4‚Ì”{”‚Ì‚É‚¸‚ñ‚¾voice”­“®
+        //ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ñ‚¾‚ï¿½4ï¿½Ì”{ï¿½ï¿½ï¿½Ìï¿½ï¿½É‚ï¿½ï¿½ï¿½voiceï¿½ï¿½ï¿½ï¿½
         if(this.score % 4 == 0)
         {
             audioLevel1_canvas[0].Play();
@@ -30,6 +30,6 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
-        scoreText.GetComponent<Text> ().text = "ÃE" + score.ToString("D");
+        scoreText.GetComponent<Text> ().text = ": " + score.ToString("D");
     }
 }
