@@ -85,6 +85,7 @@ public class MondazunController : MonoBehaviour
             steerActive = false;
             Destroy(coll.gameObject);
             Invoke("Recover", 1.0f);
+            audioLevel1[4].Play();
         }
         if (life <= 0)
         {
