@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +21,7 @@ public class MondazunController : MonoBehaviour
         return miss;
     }
     const float stunCount = 1.0f;
+    public float amountVal = 0;
     float recoverTime = 0.0f;
     float xLimit = 2.5f;
     float yLimit = 5f;
@@ -32,15 +35,16 @@ public class MondazunController : MonoBehaviour
     void Start()
     {
         audioLevel1 = GetComponents<AudioSource>();
-
     }
 
     public void SetSteerActive(bool steerActive)
     {
-        if (steerActive == false){
+        if (steerActive == false)
+        {
             this.steerActive = false;
         }
-        if (steerActive == true){
+        if (steerActive == true)
+        {
             this.steerActive = true;
         }
     }
@@ -73,7 +77,7 @@ public class MondazunController : MonoBehaviour
         }
         if (coll.gameObject.tag == "Enemy")
         {
-            Instantiate(ExplosionEffect,coll.gameObject.transform.position,Quaternion.identity);
+            Instantiate(ExplosionEffect, coll.gameObject.transform.position, Quaternion.identity);
             life--;
             Destroy(coll.gameObject);
             audioLevel1[0].Play();
@@ -85,6 +89,8 @@ public class MondazunController : MonoBehaviour
             steerActive = false;
             Destroy(coll.gameObject);
             Invoke("Recover", 1.0f);
+            transform.DOScaleY(0.5f,0.5f)
+            .SetLoops(2,LoopType.Yoyo);
         }
         if (life <= 0)
         {
@@ -99,14 +105,14 @@ public class MondazunController : MonoBehaviour
             SceneManager.LoadScene("Miss");
         }
         */
-        
-        
+
+
     }
     void Recover()
-        {
-            Debug.Log("Recover");
-            steerActive = true;
-            return;
-        }
+    {
+        Debug.Log("Recover");
+        steerActive = true;
+        return;
+    }
 
 }
