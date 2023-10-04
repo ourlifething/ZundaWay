@@ -91,6 +91,7 @@ public class MondazunController : MonoBehaviour
             Invoke("Recover", 1.0f);
             transform.DOScaleY(0.5f,0.5f)
             .SetLoops(2,LoopType.Yoyo);
+            audioLevel1[4].Play();
         }
         if (life <= 0)
         {
