@@ -32,6 +32,8 @@ public class GameControllerLevel1 : MonoBehaviour
     public Text gameOverText;
 
     public RectTransform image;
+    public Image popup;
+    public Image zunda;
     void Awake()
     {
         DOTween.Init();
@@ -43,7 +45,7 @@ public class GameControllerLevel1 : MonoBehaviour
         startText.gameObject.SetActive(false);
     }
 
-    void LateUpdate()
+    async void LateUpdate()
     {
         switch (state)
         {
@@ -51,9 +53,15 @@ public class GameControllerLevel1 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space)) GameStart();
                 break;
             case State.Play:
+                zunda.DOFade(0,0.1f);
+                popup.DOFade(0,0.5f);
+                Destroy(normaText);
+            
+                
+
                 startText.text = "Start!";
 
-                Destroy(normaText);
+               
                 count -= Time.deltaTime;
                 countText.text = "あと" + count.ToString("f1") + "m";
                 if (mondazun.Miss() || (count <= 0 && ucon.getScore() < normaScore))
@@ -76,10 +84,11 @@ public class GameControllerLevel1 : MonoBehaviour
         state = State.Ready;
 
         image.DOScale(new Vector3(5,4,4),1f);
-        image.DOPunchPosition(new Vector3(0,2,0),1f);                    // 演出時間
+        image.DOPunchPosition(new Vector3(0,2,0),1f);            
+        zunda.DOFade(1,3f);
         
         //normaText.text = normaScore.ToString() + "個集めよう！";
-    normaText.DOText("    x "+normaScore.ToString() + "\n\n60秒...以内に集めよう！\n\nPress SpaceKey!",4f);
+        normaText.DOText("    x "+normaScore.ToString() + "\n\n60秒...以内に集めよう！\n\nPress SpaceKey!",4f);
 
         mondazun.SetSteerActive(false);
         generator.geneStop();
