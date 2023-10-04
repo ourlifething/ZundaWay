@@ -30,6 +30,8 @@ public class GameControllerLevel1 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
+
+    public RectTransform image;
     void Awake()
     {
         DOTween.Init();
@@ -72,9 +74,12 @@ public class GameControllerLevel1 : MonoBehaviour
     {
         
         state = State.Ready;
+
+        image.DOScale(new Vector3(5,4,4),1f);
+        image.DOPunchPosition(new Vector3(0,2,0),1f);                    // 演出時間
         
         //normaText.text = normaScore.ToString() + "個集めよう！";
-        normaText.DOText(normaScore.ToString() + "個集めよう！",3f);
+    normaText.DOText("    x "+normaScore.ToString() + "\n\n60秒...以内に集めよう！\n\nPress SpaceKey!",4f);
 
         mondazun.SetSteerActive(false);
         generator.geneStop();
