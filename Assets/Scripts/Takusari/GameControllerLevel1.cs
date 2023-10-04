@@ -34,6 +34,7 @@ public class GameControllerLevel1 : MonoBehaviour
     public RectTransform image;
     public Image popup;
     public Image zunda;
+    public Image popupMini;
     void Awake()
     {
         DOTween.Init();
@@ -56,12 +57,9 @@ public class GameControllerLevel1 : MonoBehaviour
                 zunda.DOFade(0,0.1f);
                 popup.DOFade(0,0.5f);
                 Destroy(normaText);
-            
-                
 
                 startText.text = "Start!";
 
-               
                 count -= Time.deltaTime;
                 countText.text = "あと" + count.ToString("f1") + "m";
                 if (mondazun.Miss() || (count <= 0 && ucon.getScore() < normaScore))
@@ -98,7 +96,9 @@ public class GameControllerLevel1 : MonoBehaviour
     void GameStart()
     {
         state = State.Play;
+        popupMini.DOFade(1,0.1f);
         startText.gameObject.SetActive(true);
+        startText.DOFade(1,0.1f);
         Invoke("FalText", 1);
 
         mondazun.SetSteerActive(true);
@@ -118,6 +118,7 @@ public class GameControllerLevel1 : MonoBehaviour
             gameOverText.text = "ノルマ未達成...\nあと" + (normaScore - thisScore) + "個";
         }
 
+        popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
 
         mondazun.SetSteerActive(false);
@@ -164,5 +165,6 @@ public class GameControllerLevel1 : MonoBehaviour
     void FalText()
     {
         startText.gameObject.SetActive(false);
+        popupMini.DOFade(0,0.1F);
     }
 }
