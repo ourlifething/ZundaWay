@@ -88,10 +88,11 @@ public class MondazunController : MonoBehaviour
             Debug.Log("Stun");
             steerActive = false;
             Destroy(coll.gameObject);
-            Invoke("Recover", 1.0f);
-            transform.DOScaleY(0.5f,0.5f)
+            transform.DOScaleY(0.4f,0.5f)
             .SetLoops(2,LoopType.Yoyo);
             audioLevel1[4].Play();
+            Invoke("Recover", 1.0f);
+            
         }
         if (life <= 0)
         {
@@ -111,7 +112,6 @@ public class MondazunController : MonoBehaviour
     }
     void Recover()
     {
-        Debug.Log("Recover");
         steerActive = true;
         return;
     }
