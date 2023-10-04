@@ -19,7 +19,7 @@ public class FadeScript : MonoBehaviour
         
     }
     void Fade(){
-        _image.DOFade(0.2f, 1f)
+        _image.DOFade(0.4f, 1f)
         .SetLoops(-1, LoopType.Yoyo); // Yoyoで逆再生し続ける
     }
 }
