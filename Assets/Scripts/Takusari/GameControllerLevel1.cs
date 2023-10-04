@@ -139,6 +139,7 @@ public class GameControllerLevel1 : MonoBehaviour
     {
         state = State.Clear;
         gameOverText.text = "クリア!\nPress Space Key";
+        popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
 
         mondazun.SetSteerActive(false);
