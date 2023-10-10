@@ -6,23 +6,34 @@ using DG.Tweening;
 public class SoundManager : MonoBehaviour
 
 {
-    AudioSource audioStart;
+    AudioSource[] audioStart;
     // Start is called before the first frame update
     void Start()
     {
-        audioStart = GetComponent<AudioSource>();
-        audioStart.Play();
-        //フェードアウト
-        float fadeOutStartTime = 98f;
-        audioStart.DOFade(0, 2).SetDelay(fadeOutStartTime);
-        //フェードアウト完了後にループ再生
-        float loopStartTime = 100f;
-        float loopLength = audioStart.clip.length - loopStartTime;
+        audioStart = GetComponents<AudioSource>();
+        audioStart[0].Play();
 
-        DOTween.Sequence()
-            .SetDelay(loopStartTime)
-            .AppendCallback(() => audioStart.PlayScheduled(AudioSettings.dspTime + 0.1))
-            .AppendInterval(loopLength)
-            .SetLoops(-1);
+        // 落下音再生タイミング
+        Invoke("PlayAudioAfterDelay", 0.8f);
+
+        //タイトルコール開始
+        Invoke("VoiceTitleCall", 2.8f);
+
+        // ゲーム説明音声開始
+        Invoke("VoiceGameDescription", 5.2f);
+
+    }
+    void PlayAudioAfterDelay()
+    {
+        audioStart[2].Play();
+    }
+    void VoiceTitleCall()
+    {
+        audioStart[3].Play();
+    }
+
+    void VoiceGameDescription()
+    {
+        audioStart[1].Play();
     }
 }
