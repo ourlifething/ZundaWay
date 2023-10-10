@@ -113,6 +113,7 @@ public class MondazunController : MonoBehaviour
     void Recover()
     {
         steerActive = true;
+        transform.DOKill();
         return;
     }
 
