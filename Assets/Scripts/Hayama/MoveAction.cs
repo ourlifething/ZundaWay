@@ -6,7 +6,7 @@ public class MoveAction : MonoBehaviour
 {
     void Start()
     {
-        transform.DOLocalMove(new Vector3(-2f, 0, 0), 4f)
+        transform.DOLocalMove(new Vector3(0, 0.2f, 0), 4f)
         .SetEase(Ease.InOutCubic)
         .SetLoops(-1, LoopType.Yoyo);
     }
