@@ -30,6 +30,7 @@ public class GameControllerLevel3 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
+    public GameObject clearEdamame;
     void Start()
     {
         Ready();
@@ -97,6 +98,7 @@ public class GameControllerLevel3 : MonoBehaviour
         if (count <= 0 && thisScore >= normaScore)
         {
             gameOverText.text = "クリア!";
+            Instantiate(clearEdamame, new Vector3(0,0,0), Quaternion.identity);
         }
         gameOverText.gameObject.SetActive(true);
 

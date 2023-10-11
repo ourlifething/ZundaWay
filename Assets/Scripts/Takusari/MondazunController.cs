@@ -9,6 +9,7 @@ public class MondazunController : MonoBehaviour
     public float speed;
     bool steerActive = false;
     AudioSource[] audioLevel1;
+    public GameObject gameOvarEffect;
 
     public bool SteerActive()
     {
@@ -119,7 +120,7 @@ public class MondazunController : MonoBehaviour
             miss = true;
             audioLevel1[3].Play();
             this.GetComponent<Animator>().enabled = false;
-            Invoke("FinalExplosion",0.1f);
+            FinalExplosion();
             sequence2.Play();
             //SpriteRenderer.color = new Color32(80,80,80,255);
             
@@ -140,17 +141,10 @@ public class MondazunController : MonoBehaviour
         transform.DOKill();
         return;
     }
-    private IEnumerator FinalExplosion()
+    void FinalExplosion()
     {
-        float waitTime = 0.2f;
-        Vector3 posi = this.transform.localPosition;
-        for (int i = 0; i < 10; i++)
-        {
-           int rnd  = Random.Range(-3,3);
-           Instantiate(ExplosionEffect, new Vector3(posi.x + rnd,posi.y + rnd,posi.z), Quaternion.identity);
-           Debug.Log(rnd);
-           yield return new WaitForSeconds(waitTime);
-        }
+        Transform transform = this.transform;
+        Instantiate(gameOvarEffect, transform.position, Quaternion.identity);
     }
 
 }
