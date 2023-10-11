@@ -772,7 +772,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u305D\u3073\u65B9\u306A\u306E\u3060"
+  m_Text: "\u904A\u3073\u65B9\u306A\u306E\u3060"
 --- !u!222 &303961002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -934,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7641d01cc46dc44a2a223fffbc6c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SMObject: {fileID: 163237459}
 --- !u!82 &518542369
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1410,6 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7641d01cc46dc44a2a223fffbc6c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SMObject: {fileID: 163237459}
 --- !u!114 &1618624998
 MonoBehaviour:
   m_ObjectHideFlags: 0
