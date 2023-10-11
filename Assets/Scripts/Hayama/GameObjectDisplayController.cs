@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameObjectDisplayController : MonoBehaviour
 {
     public GameObject objectToShow;
-    public float displayDelay = 1.0f; // 表示までの待機時間（秒）
+    public float displayDelay = 2.0f; // 表示までの待機時間（秒）
 
     private float timer;
     private bool isDisplayed;
