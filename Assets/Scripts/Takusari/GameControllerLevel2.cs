@@ -18,6 +18,7 @@ public class GameControllerLevel2 : MonoBehaviour
     }
 
     State state;
+    public ScrollScript sS;
     public MondazunController mondazun;
     public ZundaGenerator generator;
     public ZundaGenerator ankoGene;
@@ -101,6 +102,7 @@ public class GameControllerLevel2 : MonoBehaviour
         generator.geneStop();
         ankoGene.geneStop();
         kiriGene.geneStop();
+        sS.OnOfChange(false);
         GameObject[] tagObj1 = GameObject.FindGameObjectsWithTag("Zunda");
         foreach (GameObject obj in tagObj1)
         {
