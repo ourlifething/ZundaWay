@@ -23,15 +23,17 @@ public class SoundManager : MonoBehaviour
         Invoke("VoiceGameDescription", 5.2f);
 
     }
+    //落下音
     void PlayAudioAfterDelay()
     {
         audioStart[2].Play();
     }
+    //タイトルコール
     void VoiceTitleCall()
     {
         audioStart[3].Play();
     }
-
+    //ゲームの説明
     void VoiceGameDescription()
     {
         audioStart[1].Play();
