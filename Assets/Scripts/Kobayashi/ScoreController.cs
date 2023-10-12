@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -11,6 +10,7 @@ public class ScoreController : MonoBehaviour
     public static int score2;
     public static int score3;
     public static int scoreTotal;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,8 @@ public class ScoreController : MonoBehaviour
         }else{
             var ranking=JsonUtility.FromJson<RankingData>(uwr.downloadHandler.text);
             Debug.Log(ranking.lastId+":"+ranking.rank);
+
+            GetComponent<Text>().text="総合獲得ずんだ数は...\n"+scoreTotal+"個!\n\n総合順位は"+ranking.rank+"位です!";
         }
     }
     

@@ -32,8 +32,6 @@ public class GameControllerLevel1 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
-    public Text totalScoreText;
-
     public RectTransform image;
     public Image popup;
     public Image zunda;
@@ -50,7 +48,7 @@ public class GameControllerLevel1 : MonoBehaviour
         startText.gameObject.SetActive(false);
     }
 
-    async void LateUpdate()
+    void LateUpdate()
     {
         switch (state)
         {
@@ -142,8 +140,6 @@ public class GameControllerLevel1 : MonoBehaviour
         ScoreController.score1+=ucon.getScore();
         ScoreController.scoreTotal+=ScoreController.score1;
         scon.ScoreTotal();
-
-        totalScoreText.text="あなたの総合順位は"+"位...\n";
 
     }
     void Clear()
