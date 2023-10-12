@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gameOvarEffect: {fileID: 7014243270456719204, guid: 63e0a2f265efc4f4ca40ac5d1ea5926d, type: 3}
   ExplosionEffect: {fileID: 7014243270456719204, guid: acbb86aa59742d440a945de5a6b1e111, type: 3}
 --- !u!212 &115461335
 SpriteRenderer:
@@ -1163,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b2038e4d2048747a8e5640c571ebcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 4
+  scrollSpeed: 5.5
   startPosition: 8
   endPotision: -8
   onof: 1
@@ -1810,6 +1811,7 @@ MonoBehaviour:
   countText: {fileID: 395330370}
   startText: {fileID: 1424712308}
   gameOverText: {fileID: 1699851728}
+  clearEdamame: {fileID: 305124102713503393, guid: eff6f18285e2cf741b8f4545c186f3ff, type: 3}
 --- !u!4 &1107822946
 Transform:
   m_ObjectHideFlags: 0

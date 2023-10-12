@@ -18,7 +18,7 @@ public class KiritanGenerator : MonoBehaviour
 
     public void geneStart()
     {
-        InvokeRepeating("GenKiritan", 1, genSpeed);
+        InvokeRepeating("GenKiritan", 2.0f, genSpeed);
         Debug.Log("OK");
     }
     public void geneStop()
