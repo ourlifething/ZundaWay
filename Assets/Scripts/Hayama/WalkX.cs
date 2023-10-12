@@ -8,7 +8,7 @@ public class WalkX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.DOLocalMove(new Vector3(-10f, 0, 0), 20f)
+        transform.DOMoveX(-10, 10f)
     .SetEase(Ease.OutSine);
     
     }
