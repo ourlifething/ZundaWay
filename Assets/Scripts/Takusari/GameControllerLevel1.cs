@@ -63,7 +63,7 @@ public class GameControllerLevel1 : MonoBehaviour
                 startText.text = "Start!";
 
                 count -= Time.deltaTime;
-                countText.text = "あと" + count.ToString("f1") + "m";
+                countText.text = "あと" + count.ToString("f1") + "秒";
                 if (mondazun.Miss() || (count <= 0 && ucon.getScore() < normaScore))
                     GameOver();
                 if (count <= 0 && ucon.getScore() >= normaScore)
@@ -88,7 +88,7 @@ public class GameControllerLevel1 : MonoBehaviour
         zunda.DOFade(1,3f);
         
         //normaText.text = normaScore.ToString() + "個集めよう！";
-        normaText.DOText("    x "+normaScore.ToString() + "\n\n60秒...以内に集めよう！\n\nPress SpaceKey!",4f);
+        normaText.DOText("    x "+normaScore.ToString() + "\n\n30秒...以内に集めよう！\n\nPress SpaceKey!",4f);
 
         mondazun.SetSteerActive(false);
         generator.geneStop();
