@@ -24,6 +24,7 @@ public class GameControllerLevel1 : MonoBehaviour
     public ZundaGenerator generator;
     public ZundaGenerator ankoGene;
     public UIController ucon;
+    public ScoreController scon;
 
     public int normaScore;
     public Text normaText;
@@ -31,7 +32,6 @@ public class GameControllerLevel1 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
-
     public RectTransform image;
     public Image popup;
     public Image zunda;
@@ -48,7 +48,7 @@ public class GameControllerLevel1 : MonoBehaviour
         startText.gameObject.SetActive(false);
     }
 
-    async void LateUpdate()
+    void LateUpdate()
     {
         switch (state)
         {
@@ -63,7 +63,7 @@ public class GameControllerLevel1 : MonoBehaviour
                 startText.text = "Start!";
 
                 count -= Time.deltaTime;
-                countText.text = "あと" + count.ToString("f1") + "m";
+                countText.text = "あと" + count.ToString("f1") + "秒";
                 if (mondazun.Miss() || (count <= 0 && ucon.getScore() < normaScore))
                     GameOver();
                 if (count <= 0 && ucon.getScore() >= normaScore)
@@ -88,7 +88,7 @@ public class GameControllerLevel1 : MonoBehaviour
         zunda.DOFade(1,3f);
         
         //normaText.text = normaScore.ToString() + "個集めよう！";
-        normaText.DOText("    x "+normaScore.ToString() + "\n\n60秒...以内に集めよう！\n\nPress SpaceKey!",4f);
+        normaText.DOText("    x "+normaScore.ToString() + "\n\n30秒...以内に集めよう！\n\nPress SpaceKey!",4f);
 
         mondazun.SetSteerActive(false);
         generator.geneStop();
@@ -137,6 +137,10 @@ public class GameControllerLevel1 : MonoBehaviour
         {
             Destroy(obj);
         }
+        ScoreController.score1+=ucon.getScore();
+        ScoreController.scoreTotal+=ScoreController.score1;
+        scon.ScoreTotal();
+
     }
     void Clear()
     {
@@ -159,6 +163,8 @@ public class GameControllerLevel1 : MonoBehaviour
         {
             Destroy(obj);
         }
+        ScoreController.score1+=ucon.getScore();
+        ScoreController.scoreTotal+=ScoreController.score1;
 
     }
     void Reload()
