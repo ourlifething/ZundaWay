@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zundaPrefab: {fileID: 2907342801517243950, guid: 7617aab920a90064b8d16dcdb750b858, type: 3}
-  genSpeed: 0.4
+  genSpeed: 0.5
 --- !u!4 &819719053
 Transform:
   m_ObjectHideFlags: 0
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   countText: {fileID: 395330370}
   startText: {fileID: 1424712308}
   gameOverText: {fileID: 1699851728}
-  clearEdamame: {fileID: 305124102713503393, guid: eff6f18285e2cf741b8f4545c186f3ff, type: 3}
+  clearEdamame: {fileID: 305124102713503393, guid: 2ea5341d5f6712f45bb70a0edcb2731a, type: 3}
 --- !u!4 &1107822946
 Transform:
   m_ObjectHideFlags: 0
@@ -2781,7 +2781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KiritanPrefabL: {fileID: 2914801437639028910, guid: a1a2c1706252c2949a56854b54b25c40, type: 3}
   KiritanPrefabR: {fileID: 1483541042958894196, guid: 468d694b9c6d58b448ae28b7ca5e3de0, type: 3}
-  genSpeed: 2
+  genSpeed: 2.2
 --- !u!4 &1615546807
 Transform:
   m_ObjectHideFlags: 0

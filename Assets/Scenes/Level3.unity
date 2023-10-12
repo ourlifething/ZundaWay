@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b2038e4d2048747a8e5640c571ebcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 5.5
+  scrollSpeed: 4
   startPosition: 7.4
   endPotision: -7.4
   onof: 1
@@ -1234,7 +1234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493900685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29434904, y: -0.6864156, z: -0.024618205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   countText: {fileID: 395330370}
   startText: {fileID: 1424712308}
   gameOverText: {fileID: 1699851728}
-  clearEdamame: {fileID: 305124102713503393, guid: eff6f18285e2cf741b8f4545c186f3ff, type: 3}
+  clearEdamame: {fileID: 305124102713503393, guid: 2ea5341d5f6712f45bb70a0edcb2731a, type: 3}
 --- !u!1 &1299410023
 GameObject:
   m_ObjectHideFlags: 0
