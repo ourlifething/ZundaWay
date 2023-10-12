@@ -23,6 +23,7 @@ public class GameControllerLevel1 : MonoBehaviour
     public ZundaGenerator generator;
     public ZundaGenerator ankoGene;
     public UIController ucon;
+    public ScoreController scon;
 
     public int normaScore;
     public Text normaText;
@@ -30,11 +31,13 @@ public class GameControllerLevel1 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
+    public Text totalScoreText;
 
     public RectTransform image;
     public Image popup;
     public Image zunda;
     public Image popupMini;
+
     void Awake()
     {
         DOTween.Init();
@@ -134,6 +137,12 @@ public class GameControllerLevel1 : MonoBehaviour
         {
             Destroy(obj);
         }
+        ScoreController.score1+=ucon.getScore();
+        ScoreController.scoreTotal+=ScoreController.score1;
+        scon.ScoreTotal();
+
+        totalScoreText.text="あなたの総合順位は"+"位...\n";
+
     }
     void Clear()
     {
@@ -155,6 +164,8 @@ public class GameControllerLevel1 : MonoBehaviour
         {
             Destroy(obj);
         }
+        ScoreController.score1+=ucon.getScore();
+        ScoreController.scoreTotal+=ScoreController.score1;
 
     }
     void Reload()
