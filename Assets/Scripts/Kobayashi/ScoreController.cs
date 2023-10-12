@@ -65,7 +65,7 @@ public class ScoreController : MonoBehaviour
             {
                 mathPer=1;
             }
-            text.DOText("総合獲得ずんだ餅は...\n"+scoreTotal+"個!\nランキングは"+rank+"位\n\n上位"+mathPer+"%の実力です!",4f);
+            text.DOText("総合獲得ずんだ餅は...\n"+scoreTotal+"個!\n総合ランキング..."+rank+"位\n\n上位"+mathPer+"%の実力です!",4f);
 
     }
 
