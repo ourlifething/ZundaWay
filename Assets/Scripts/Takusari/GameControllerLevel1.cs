@@ -36,7 +36,7 @@ public class GameControllerLevel1 : MonoBehaviour
     public Image popup;
     public Image zunda;
     public Image popupMini;
-
+    public GameObject clearEdamame;
     void Awake()
     {
         DOTween.Init();
@@ -149,6 +149,7 @@ public class GameControllerLevel1 : MonoBehaviour
         popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
 
+        Instantiate(clearEdamame, new Vector3(0,0,0), Quaternion.identity);
         mondazun.SetSteerActive(false);
         generator.geneStop();
         ankoGene.geneStop();
@@ -177,4 +178,5 @@ public class GameControllerLevel1 : MonoBehaviour
         startText.gameObject.SetActive(false);
         popupMini.DOFade(0,0.1F);
     }
+    
 }
