@@ -18,6 +18,8 @@ public class StartAsobikataButton : MonoBehaviour
         //クリックされたらゲーム説明を中止
         AudioSource[] pauseAudio = SMObject.GetComponents<AudioSource>();
         pauseAudio[1].Pause();
+        //クリックされたらタイトルコールを中止
+        pauseAudio[3].Pause();
     }
     public void OnClickStart()
     {
@@ -25,6 +27,7 @@ public class StartAsobikataButton : MonoBehaviour
         //クリックされたらゲーム説明を中止
         AudioSource[] pauseAudio = SMObject.GetComponents<AudioSource>();
         pauseAudio[1].Pause();
+        //クリックされたらタイトルコールを中止
+        pauseAudio[3].Pause();
     }
-    
 }
