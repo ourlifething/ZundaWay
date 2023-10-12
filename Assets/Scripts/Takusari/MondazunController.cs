@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,13 +14,13 @@ public class MondazunController : MonoBehaviour
     {
         return steerActive;
     }
+    
     bool miss;
     public bool Miss()
     {
         return miss;
     }
     const float stunCount = 1.0f;
-    public float amountVal = 0;
     float recoverTime = 0.0f;
     float xLimit = 2.5f;
     float yLimit = 5f;
@@ -32,9 +31,29 @@ public class MondazunController : MonoBehaviour
         return life;
     }
     public GameObject ExplosionEffect;
+    private Sequence sequence;
+    private Sequence sequence2;
+    private SpriteRenderer sprite;
+    
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         audioLevel1 = GetComponents<AudioSource>();
+        sequence = DOTween.Sequence()
+        .Append(transform.DOScaleY(0.4f,0.5f))
+        .Append(transform.DOScaleY(0.2f,0.5f))
+            .Pause()
+            .SetAutoKill(false); 
+        
+        sequence2 = DOTween.Sequence()
+        //.Append(transform.DOShakePosition(1f,5f,30,1,false,false))
+        .Append(transform.DOShakeRotation(1f,180f,90,90,true))
+        .Append(sprite.DOColor(new Color(0,0,0),1.5f))
+        .Append(transform.DORotate(new Vector3(0,0,-90),2))
+            .Pause()
+            .SetAutoKill(false);
+
+        //SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void SetSteerActive(bool steerActive)
@@ -85,11 +104,11 @@ public class MondazunController : MonoBehaviour
         }
         if (coll.gameObject.tag == "Ghost")
         {
+            
             Debug.Log("Stun");
             steerActive = false;
             Destroy(coll.gameObject);
-            transform.DOScaleY(0.4f,0.5f)
-            .SetLoops(2,LoopType.Yoyo);
+            sequence.Restart();
             audioLevel1[4].Play();
             Invoke("Recover", 1.0f);
             
@@ -99,6 +118,11 @@ public class MondazunController : MonoBehaviour
             enabled = false;
             miss = true;
             audioLevel1[3].Play();
+            this.GetComponent<Animator>().enabled = false;
+            Invoke("FinalExplosion",0.1f);
+            sequence2.Play();
+            //SpriteRenderer.color = new Color32(80,80,80,255);
+            
 
             //Invoke("FalledMiss",2.0f);
         }
@@ -115,6 +139,18 @@ public class MondazunController : MonoBehaviour
         steerActive = true;
         transform.DOKill();
         return;
+    }
+    private IEnumerator FinalExplosion()
+    {
+        float waitTime = 0.2f;
+        Vector3 posi = this.transform.localPosition;
+        for (int i = 0; i < 10; i++)
+        {
+           int rnd  = Random.Range(-3,3);
+           Instantiate(ExplosionEffect, new Vector3(posi.x + rnd,posi.y + rnd,posi.z), Quaternion.identity);
+           Debug.Log(rnd);
+           yield return new WaitForSeconds(waitTime);
+        }
     }
 
 }
