@@ -11,6 +11,7 @@ public class ScoreController : MonoBehaviour
     public static int score2;
     public static int score3;
     public static int scoreTotal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,6 @@ public class ScoreController : MonoBehaviour
             Debug.Log(ranking.lastId+":"+ranking.rank);
         }
     }
-
     
 
 }
