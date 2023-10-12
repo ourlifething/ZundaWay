@@ -31,6 +31,7 @@ public class GameControllerLevel2 : MonoBehaviour
     public Text countText;
     public Text startText;
     public Text gameOverText;
+    public GameObject clearEdamame;
     void Start()
     {
         Ready();
@@ -120,6 +121,7 @@ public class GameControllerLevel2 : MonoBehaviour
         gameOverText.text = "クリア!\nPress Space Key";
         gameOverText.gameObject.SetActive(true);
 
+        Instantiate(clearEdamame, new Vector3(0,0,0), Quaternion.identity);
         mondazun.SetSteerActive(false);
         generator.geneStop();
         ankoGene.geneStop();
