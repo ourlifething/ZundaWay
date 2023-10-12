@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b2038e4d2048747a8e5640c571ebcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 3.7
+  scrollSpeed: 5.5
   startPosition: 7.4
   endPotision: -7.4
   onof: 1
@@ -2686,7 +2686,7 @@ MonoBehaviour:
   GhostPrefabL: {fileID: 7063159907975599530, guid: 911c6fca737ee874188f3d19b17a5a27, type: 3}
   GhostPrefabR: {fileID: 8747476620326289184, guid: add45ad80765ffe4797bfa4fe6c1df80, type: 3}
   GhostPrefabF: {fileID: 6105806499716676644, guid: d478ef10c86faaf4f8ffe306958a370f, type: 3}
-  genSpeed: 3
+  genSpeed: 2.8
 --- !u!4 &1868811592
 Transform:
   m_ObjectHideFlags: 0
