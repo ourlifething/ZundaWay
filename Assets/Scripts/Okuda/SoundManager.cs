@@ -26,7 +26,7 @@ public class SoundManager : MonoBehaviour
         {
             Invoke("VoiceTitleCall", 2.8f);
         }
-        
+       
 
         // ゲーム説明音声開始
         if (StartButtonClicked == false && AsobikataButtonClicked == false)
