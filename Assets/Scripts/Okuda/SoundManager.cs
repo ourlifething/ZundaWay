@@ -38,4 +38,22 @@ public class SoundManager : MonoBehaviour
     {
         audioStart[1].Play();
     }
+    //遊び方ボタンがクリックされたら
+    public void OnClickAsobikata()
+    {
+        audioStart[4].Play();
+        //クリックされたらゲーム説明を中止
+        audioStart[1].Pause();
+        //クリックされたらタイトルコールを中止
+        audioStart[3].Pause();
+    }
+    //スタートボタンがクリックされたら
+    public void OnClickStart()
+    {
+        audioStart[5].Play();
+        //クリックされたらゲーム説明を中止
+        audioStart[1].Pause();
+        //クリックされたらタイトルコールを中止
+        audioStart[3].Pause();
+    }
 }
