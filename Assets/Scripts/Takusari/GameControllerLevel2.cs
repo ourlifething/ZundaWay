@@ -69,7 +69,7 @@ public class GameControllerLevel2 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space)) Reload();
                 break;
             case State.Clear:
-                if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene("Level3");
+                if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene("transilition2");
                 break;
         }
     }
@@ -141,12 +141,14 @@ public class GameControllerLevel2 : MonoBehaviour
         state = State.Clear;
         gameOverText.text = "クリア!\nPress Space Key";
         gameOverText.gameObject.SetActive(true);
+        mondazun.SpriteChange();
 
         Instantiate(clearEdamame, new Vector3(0,0,0), Quaternion.identity);
         mondazun.SetSteerActive(false);
         generator.geneStop();
         ankoGene.geneStop();
         kiriGene.geneStop();
+        sS.OnOfChange(false);
         GameObject[] tagObj1 = GameObject.FindGameObjectsWithTag("Zunda");
         foreach (GameObject obj in tagObj1)
         {

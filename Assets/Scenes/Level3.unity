@@ -241,6 +241,7 @@ MonoBehaviour:
   speed: 5
   gameOvarEffect: {fileID: 7014243270456719204, guid: 63e0a2f265efc4f4ca40ac5d1ea5926d, type: 3}
   ExplosionEffect: {fileID: 7014243270456719204, guid: acbb86aa59742d440a945de5a6b1e111, type: 3}
+  clearSprite: {fileID: -1377608422, guid: 538131d09d755415e9b1f3d4bcfae46e, type: 3}
 --- !u!212 &115461335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2294,7 +2295,7 @@ MonoBehaviour:
   popup: {fileID: 1170423409}
   zunda: {fileID: 1850681222}
   popupMini: {fileID: 932653663}
-  clearEdamame: {fileID: 305124102713503393, guid: 2ea5341d5f6712f45bb70a0edcb2731a, type: 3}
+  clearEdamame: {fileID: 2550331067531768619, guid: ee1ca05cf8021f546a00b984b7e7cdb6, type: 3}
 --- !u!1 &1111570644
 GameObject:
   m_ObjectHideFlags: 0
