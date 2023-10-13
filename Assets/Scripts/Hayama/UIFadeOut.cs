@@ -14,7 +14,7 @@ public class UIFadeOut : MonoBehaviour
         if (!isFading)
         {
             isFading = true;
-            imageToFade.DOFade(1.0f, 0.5f).OnComplete(FadeOutComplete);
+            imageToFade.DOFade(1.0f, 0.3f).OnComplete(FadeOutComplete);
             //Debug.Log("ok");
         }
     }
