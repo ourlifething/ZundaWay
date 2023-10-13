@@ -34,11 +34,13 @@ public class MondazunController : MonoBehaviour
     public GameObject ExplosionEffect;
     private Sequence sequence;
     private Sequence sequence2;
-    private SpriteRenderer sprite;
+    private SpriteRenderer spriteRender;
+    public Sprite clearSprite;
+    private Animator anim;
     
     void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        spriteRender = GetComponent<SpriteRenderer>();
         audioLevel1 = GetComponents<AudioSource>();
         sequence = DOTween.Sequence()
         .Append(transform.DOScaleY(0.4f,0.5f))
@@ -49,7 +51,7 @@ public class MondazunController : MonoBehaviour
         sequence2 = DOTween.Sequence()
         //.Append(transform.DOShakePosition(1f,5f,30,1,false,false))
         .Append(transform.DOShakeRotation(1f,180f,90,90,true))
-        .Append(sprite.DOColor(new Color(0,0,0),1.5f))
+        .Append(spriteRender.DOColor(new Color(0,0,0),1.5f))
         .Append(transform.DORotate(new Vector3(0,0,-90),2))
             .Pause()
             .SetAutoKill(false);
@@ -145,6 +147,14 @@ public class MondazunController : MonoBehaviour
     {
         Transform transform = this.transform;
         Instantiate(gameOvarEffect, transform.position, Quaternion.identity);
+    }
+
+    public  void SpriteChange()
+    {
+        anim = GetComponent<Animator>();
+        anim.enabled = false;
+        spriteRender.sprite = clearSprite;
+        Debug.Log("o");
     }
 
 }

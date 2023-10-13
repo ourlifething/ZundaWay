@@ -13,7 +13,8 @@ public class GameControllerLevel3 : MonoBehaviour
     {
         Ready,
         Play,
-        GameOver
+        GameOver,
+        Clear
     }
 
     State state;
@@ -61,10 +62,16 @@ public class GameControllerLevel3 : MonoBehaviour
                 Destroy(normaText);
                 count -= Time.deltaTime;
                 countText.text = "あと" + count.ToString("f1") + "秒";
-                if (mondazun.Miss() || count <= 0) GameOver();
+                if (mondazun.Miss() || (count <= 0 && ucon.getScore() < normaScore)) 
+                GameOver();
+                if (count <= 0 && ucon.getScore() >= normaScore)
+                    Clear();
                 break;
             case State.GameOver:
                 if (Input.GetKeyDown(KeyCode.Space)) Reload();
+                break;
+            case State.Clear:
+            if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene("transition1");
                 break;
         }
     }
@@ -112,16 +119,7 @@ public class GameControllerLevel3 : MonoBehaviour
         {
             gameOverText.text = "ノルマ未達成...\nあと" + (normaScore - thisScore) + "個";
         }
-        if (count <= 0 && thisScore >= normaScore)
-        {
-            gameOverText.text = "クリア!";
-            Instantiate(clearEdamame, new Vector3(0,0,0), Quaternion.identity);
-            ScoreController.score3+=ucon.getScore();
-            ScoreController.scoreTotal+=ScoreController.score3;
-            scon.ScoreTotal();
-            ScoreController.score3=0;
-            ScoreController.scoreTotal=0;
-        }
+
         popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
 
@@ -144,6 +142,35 @@ public class GameControllerLevel3 : MonoBehaviour
         ScoreController.score3+=ucon.getScore();
         ScoreController.scoreTotal+=ScoreController.score3;
         scon.ScoreTotal();
+    }
+    void Clear()
+    {
+        state = State.Clear;
+        gameOverText.text = "クリア!\nPress Space Key";
+        popupMini.DOFade(1,0.1f);
+        gameOverText.gameObject.SetActive(true);
+        mondazun.SpriteChange();
+
+        Instantiate(clearEdamame, new Vector3(0,0,0), Quaternion.identity);
+        mondazun.SetSteerActive(false);
+        generator.geneStop();
+        ankoGene.geneStop();
+        kiriGene.geneStop();
+        ghostGene.geneStop();
+        sS.OnOfChange(false);
+        GameObject[] tagObj1 = GameObject.FindGameObjectsWithTag("Zunda");
+        foreach (GameObject obj in tagObj1)
+        {
+            Destroy(obj);
+        }
+        GameObject[] tagObj2 = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject obj in tagObj2)
+        {
+            Destroy(obj);
+        }
+        ScoreController.score3+=ucon.getScore();
+        ScoreController.scoreTotal+=ScoreController.score3;
+
     }
     void Reload()
     {
