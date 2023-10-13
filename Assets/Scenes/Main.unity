@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gameOvarEffect: {fileID: 0}
   ExplosionEffect: {fileID: 0}
 --- !u!212 &115461335
 SpriteRenderer:
