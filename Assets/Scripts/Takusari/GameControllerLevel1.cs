@@ -56,8 +56,7 @@ public class GameControllerLevel1 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space)) GameStart();
                 break;
             case State.Play:
-                zunda.DOFade(0,0.1f);
-                popup.DOFade(0,0.5f);
+                ScoreController.score1=0;
                 Destroy(normaText);
 
                 startText.text = "Start!";
@@ -98,6 +97,8 @@ public class GameControllerLevel1 : MonoBehaviour
     void GameStart()
     {
         state = State.Play;
+        zunda.DOFade(0,0.1f);
+        popup.DOFade(0,0.5f);
         popupMini.DOFade(1,0.1f);
         startText.gameObject.SetActive(true);
         startText.DOFade(1,0.1f);
@@ -140,7 +141,6 @@ public class GameControllerLevel1 : MonoBehaviour
         ScoreController.score1+=ucon.getScore();
         ScoreController.scoreTotal+=ScoreController.score1;
         scon.ScoreTotal();
-
     }
     void Clear()
     {
@@ -172,9 +172,8 @@ public class GameControllerLevel1 : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
-        ScoreController.score1+=ucon.getScore();
-        ScoreController.score1=0;
         ScoreController.scoreTotal=0;
+        ScoreController.score1+=0;
     }
     void FalText()
     {
