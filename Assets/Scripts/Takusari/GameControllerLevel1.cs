@@ -97,7 +97,7 @@ public class GameControllerLevel1 : MonoBehaviour
     void GameStart()
     {
         state = State.Play;
-        zunda.DOFade(0,0.1f);
+        zunda.gameObject.SetActive(false);
         popup.DOFade(0,0.5f);
         popupMini.DOFade(1,0.1f);
         startText.gameObject.SetActive(true);

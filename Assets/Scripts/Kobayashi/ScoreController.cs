@@ -33,6 +33,7 @@ public class ScoreController : MonoBehaviour
     }
     public void ScoreTotal(){
         StartCoroutine(PostConnect());
+        Debug.Log("OK");
     }
     IEnumerator PostConnect(){
         WWWForm form=new WWWForm();
