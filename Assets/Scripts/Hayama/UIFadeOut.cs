@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class UIFadeOut : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class UIFadeOut : MonoBehaviour
         if (!isFading)
         {
             isFading = true;
-            // フェードアウトのアニメーションを設定
-            imageToFade.DOFade(0f, 1.0f).OnComplete(FadeOutComplete);
+            imageToFade.DOFade(1.0f, 0.5f).OnComplete(FadeOutComplete);
+            //Debug.Log("ok");
         }
     }
 
@@ -22,5 +23,6 @@ public class UIFadeOut : MonoBehaviour
     {
         isFading = false;
         // フェードアウト完了時の処理をここに追加
+        SceneManager.LoadScene("Level1"); 
     }
 }
