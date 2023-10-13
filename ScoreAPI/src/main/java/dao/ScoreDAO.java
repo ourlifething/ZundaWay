@@ -107,11 +107,18 @@ public RankingResult getRankingResult(Score score) {
 			result.setLastId(rs.getInt(1));
 		}
 		
-		ps=db.prepareStatement("SELECT COUNT(*)+1 AS rank FROM scores WHERE score>?");
+		ps=db.prepareStatement("SELECT COUNT(*)+1 AS rank FROM scores WHERE score > ?");
 		ps.setInt(1,score.getScore());
 		rs=ps.executeQuery();
 		if(rs.next()) {
 			result.setRank(rs.getInt("rank"));
+		}
+		
+		ps=db.prepareStatement("SELECT COUNT(*) AS rankIn FROM scores WHERE score >= ?");
+		ps.setInt(1,score.getScore());
+		rs=ps.executeQuery();
+		if(rs.next()) {
+			result.setRankIn(rs.getInt("rankIn"));
 		}
 
 	} catch (NamingException | SQLException e) {

@@ -85,7 +85,7 @@ public class GameControllerLevel1 : MonoBehaviour
 
         image.DOScale(new Vector3(5,4,4),1f);
         image.DOPunchPosition(new Vector3(0,2,0),1f);            
-        zunda.DOFade(1,3f);
+        zunda.DOFade(1,4f);
         
         //normaText.text = normaScore.ToString() + "個集めよう！";
         normaText.DOText("    x "+normaScore.ToString() + "\n\n30秒...以内に集めよう！\n\nPress SpaceKey!",4f);
@@ -172,6 +172,9 @@ public class GameControllerLevel1 : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+        ScoreController.score1+=ucon.getScore();
+        ScoreController.score1=0;
+        ScoreController.scoreTotal=0;
     }
     void FalText()
     {
