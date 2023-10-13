@@ -7,7 +7,6 @@ public class KiritanGenerator : MonoBehaviour
     public GameObject KiritanPrefabL;
     public GameObject KiritanPrefabR;
     public float genSpeed;
-    bool steerActive = false;
     AudioSource[] audioLevel2;
 
     void Start()
