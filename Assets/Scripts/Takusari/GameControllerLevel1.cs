@@ -148,11 +148,13 @@ public class GameControllerLevel1 : MonoBehaviour
         gameOverText.text = "クリア!\nPress Space Key";
         popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
+        mondazun.SpriteChange();
 
         Instantiate(clearEdamame, new Vector3(0,0,0), Quaternion.identity);
         mondazun.SetSteerActive(false);
         generator.geneStop();
         ankoGene.geneStop();
+        sS.OnOfChange(false);
         GameObject[] tagObj1 = GameObject.FindGameObjectsWithTag("Zunda");
         foreach (GameObject obj in tagObj1)
         {

@@ -240,6 +240,7 @@ MonoBehaviour:
   speed: 5
   gameOvarEffect: {fileID: 7014243270456719204, guid: 63e0a2f265efc4f4ca40ac5d1ea5926d, type: 3}
   ExplosionEffect: {fileID: 7014243270456719204, guid: acbb86aa59742d440a945de5a6b1e111, type: 3}
+  clearSprite: {fileID: -1377608422, guid: 538131d09d755415e9b1f3d4bcfae46e, type: 3}
 --- !u!212 &115461335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -281,15 +282,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 344497347, guid: fb91ee3e99eb47748806e4220ba555ec, type: 3}
+  m_Sprite: {fileID: -1062875252, guid: 538131d09d755415e9b1f3d4bcfae46e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.42, y: 5.91}
+  m_Size: {x: 5.05, y: 5.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &115461336
