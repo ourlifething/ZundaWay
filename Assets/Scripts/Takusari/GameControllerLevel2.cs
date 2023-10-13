@@ -60,9 +60,8 @@ public class GameControllerLevel2 : MonoBehaviour
 
                 startText.text = "Start!";
 
-                Destroy(normaText);
                 count -= Time.deltaTime;
-                countText.text = "あと" + count.ToString("f1") + "m";
+                countText.text = "あと" + count.ToString("f1") + "秒";
                 if (mondazun.Miss() || (count <= 0 && ucon.getScore() < normaScore)) GameOver();
                 if (count <= 0 && ucon.getScore() >= normaScore) Clear();
                 break;

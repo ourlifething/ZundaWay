@@ -2415,12 +2415,12 @@ MonoBehaviour:
   normaScore: 30
   normaText: {fileID: 376238690}
   count: 45
-  countText: {fileID: 376238690}
+  countText: {fileID: 2063852812}
   startText: {fileID: 349047003}
   gameOverText: {fileID: 1117757214}
   image: {fileID: 1163589059}
   popup: {fileID: 1163589060}
-  zunda: {fileID: 877981404}
+  zunda: {fileID: 1354284246}
   popupMini: {fileID: 877981404}
   clearEdamame: {fileID: 305124102713503393, guid: 2ea5341d5f6712f45bb70a0edcb2731a, type: 3}
 --- !u!4 &1107822946
