@@ -43,8 +43,8 @@ public class MondazunController : MonoBehaviour
         spriteRender = GetComponent<SpriteRenderer>();
         audioLevel1 = GetComponents<AudioSource>();
         sequence = DOTween.Sequence()
-        .Append(transform.DOScaleY(0.4f,0.5f))
-        .Append(transform.DOScaleY(0.2f,0.5f))
+        .Append(transform.DOScale(new Vector3(0.1f,0.4f,0.2f),0.5f))
+        .Append(transform.DOScale(new Vector3(0.2f,0.2f,0.2f),0.5f))
             .Pause()
             .SetAutoKill(false); 
         
