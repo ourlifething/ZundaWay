@@ -1908,7 +1908,7 @@ MonoBehaviour:
   countText: {fileID: 395330370}
   startText: {fileID: 1424712308}
   gameOverText: {fileID: 1699851728}
-  clearEdamame: {fileID: 305124102713503393, guid: 2ea5341d5f6712f45bb70a0edcb2731a, type: 3}
+  clearEdamame: {fileID: 2550331067531768619, guid: ee1ca05cf8021f546a00b984b7e7cdb6, type: 3}
 --- !u!1 &1299410023
 GameObject:
   m_ObjectHideFlags: 0

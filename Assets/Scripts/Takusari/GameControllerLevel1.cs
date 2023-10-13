@@ -73,7 +73,7 @@ public class GameControllerLevel1 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space)) Reload();
                 break;
             case State.Clear:
-                if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene("Level2");
+                if (Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene("transition1");
                 break;
         }
     }
