@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mondazun: {fileID: 115461334}
-  lifePanel: {fileID: 0}
+  lifePanel: {fileID: 1492262031}
 --- !u!1 &268068134
 GameObject:
   m_ObjectHideFlags: 0
