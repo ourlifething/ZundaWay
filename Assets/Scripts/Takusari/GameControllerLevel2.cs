@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameControllerLevel2 : MonoBehaviour
 {
@@ -25,12 +26,18 @@ public class GameControllerLevel2 : MonoBehaviour
     public KiritanGenerator kiriGene;
     public UIController ucon;
 
+    public ScoreController scon;
+
     public int normaScore;
     public Text normaText;
     public float count;
     public Text countText;
     public Text startText;
     public Text gameOverText;
+    public RectTransform image;
+    public Image popup;
+    public Image zunda;
+    public Image popupMini;
     public GameObject clearEdamame;
     void Start()
     {
@@ -47,6 +54,10 @@ public class GameControllerLevel2 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space)) GameStart();
                 break;
             case State.Play:
+                zunda.DOFade(0,0.1f);
+                popup.DOFade(0,0.5f);
+                Destroy(normaText);
+
                 startText.text = "Start!";
 
                 Destroy(normaText);
@@ -67,7 +78,13 @@ public class GameControllerLevel2 : MonoBehaviour
     void Ready()
     {
         state = State.Ready;
-        normaText.text = normaScore.ToString() + "個集めよう！";
+        
+        image.DOScale(new Vector3(5,4,4),1f);
+        image.DOPunchPosition(new Vector3(0,2,0),1f);            
+        zunda.DOFade(1,4f);
+        
+        //normaText.text = normaScore.ToString() + "個集めよう！";
+        normaText.DOText("    x "+normaScore.ToString() + "\n\n45秒...以内に集めよう！\n\nPress SpaceKey!",4f);
 
         mondazun.SetSteerActive(false);
         generator.geneStop();
@@ -97,6 +114,8 @@ public class GameControllerLevel2 : MonoBehaviour
         {
             gameOverText.text = "ノルマ未達成...\nあと" + (normaScore - thisScore) + "個";
         }
+
+        popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
 
         mondazun.SetSteerActive(false);
@@ -114,6 +133,9 @@ public class GameControllerLevel2 : MonoBehaviour
         {
             Destroy(obj);
         }
+        ScoreController.score2+=ucon.getScore();
+        ScoreController.scoreTotal+=ScoreController.score2;
+        scon.ScoreTotal();
     }
     void Clear()
     {
@@ -136,15 +158,21 @@ public class GameControllerLevel2 : MonoBehaviour
         {
             Destroy(obj);
         }
+        ScoreController.score2+=ucon.getScore();
+        ScoreController.scoreTotal+=ScoreController.score2;
     }
     void Reload()
     {
         gameOverText.gameObject.SetActive(false);
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+        ScoreController.score2+=ucon.getScore();
+        ScoreController.score2=0;
+        ScoreController.scoreTotal=0;
     }
     void FalText()
     {
         startText.gameObject.SetActive(false);
+        popupMini.DOFade(0,0.1F);
     }
 }

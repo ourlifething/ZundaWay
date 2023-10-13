@@ -172,6 +172,7 @@ public class GameControllerLevel1 : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+        ScoreController.score1+=ucon.getScore();
         ScoreController.score1=0;
         ScoreController.scoreTotal=0;
     }
