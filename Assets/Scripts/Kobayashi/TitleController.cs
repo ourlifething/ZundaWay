@@ -12,7 +12,8 @@ public class TitleController : MonoBehaviour
     {
         logo.transform.DOLocalMove(new Vector3(-0.03f, 2.63f, 0f), 2.5f)
             .SetEase(Ease.InOutElastic);     
-        logoBack.transform.DOLocalMove(new Vector3(-0.13f, 2.53f, 0f), 2.5f);
+        logoBack.transform.DOLocalMove(new Vector3(-0.13f, 2.53f, 0f), 0.5f)
+            .SetDelay(1.5f);
     }
     
 
