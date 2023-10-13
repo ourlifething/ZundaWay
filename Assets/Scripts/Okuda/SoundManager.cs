@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 
@@ -54,6 +55,7 @@ public class SoundManager : MonoBehaviour
     {
         AsobikataButtonClicked = true;
         audioStart[4].Play();
+        SceneManager.LoadScene("HowToPlay");
         //クリックされたらゲーム説明を中止
         audioStart[1].Pause();
         //クリックされたらタイトルコールを中止
@@ -68,6 +70,8 @@ public class SoundManager : MonoBehaviour
     {
         StartButtonClicked = true;
         audioStart[5].Play();
+        SceneManager.LoadScene("Level1");
+
         //クリックされたらゲーム説明を中止
         audioStart[1].Pause();
         //クリックされたらタイトルコールを中止
