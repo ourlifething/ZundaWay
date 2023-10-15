@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEditor.Build.Reporting;
 
 public class SoundManager : MonoBehaviour
 
@@ -12,12 +13,14 @@ public class SoundManager : MonoBehaviour
     private bool StartButtonClicked = false;
     //遊び方ボタンがクリックされている状態かどうか
     private bool AsobikataButtonClicked = false;
+   
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
         audioStart = GetComponents<AudioSource>();
-        audioStart[0].Play();
 
         // 落下音再生タイミング
         Invoke("PlayAudioAfterDelay", 0.8f);
@@ -55,7 +58,9 @@ public class SoundManager : MonoBehaviour
     {
         AsobikataButtonClicked = true;
         audioStart[4].Play();
+
         SceneManager.LoadScene("HowToPlay");
+
         //クリックされたらゲーム説明を中止
         audioStart[1].Pause();
         //クリックされたらタイトルコールを中止
@@ -65,6 +70,7 @@ public class SoundManager : MonoBehaviour
         CancelInvoke("VoiceGameDescription");
         CancelInvoke("VoiceTitleCall");
     }
+    
     //スタートボタンがクリックされたら
     public void OnClickStart()
     {
