@@ -34,7 +34,14 @@ public class BgmManager : MonoBehaviour
     {
         if(scene.name != "HowToPlay")
         {
-            Destroy(gameObject);
+            GameObject obj = GameObject.Find("BGM2");
+            if (obj != null)
+            {
+                Destroy(obj);
+
+            }
+            
+            
         }
     }
 }
