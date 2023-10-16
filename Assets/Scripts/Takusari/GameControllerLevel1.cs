@@ -56,7 +56,6 @@ public class GameControllerLevel1 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space)) GameStart();
                 break;
             case State.Play:
-                ScoreController.score1=0;
                 Destroy(normaText);
 
                 startText.text = "Start!";
@@ -145,7 +144,7 @@ public class GameControllerLevel1 : MonoBehaviour
     void Clear()
     {
         state = State.Clear;
-        gameOverText.text = "クリア!\nPress Space Key";
+        gameOverText.text = "クリア!\nPress SpaceKey!";
         popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
         mondazun.SpriteChange();

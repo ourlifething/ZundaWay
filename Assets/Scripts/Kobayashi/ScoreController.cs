@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+
 
 public class ScoreController : MonoBehaviour
 {
@@ -51,7 +53,13 @@ public class ScoreController : MonoBehaviour
             id=ranking.lastId;
             rankIn=ranking.rankIn;
 
-            Invoke(nameof(Popup),3f);
+
+            string sName = SceneManager.GetActiveScene().name;
+            if (sName == "Clear"){
+                Invoke(nameof(PopupClear),2f);
+            }else{
+                Invoke(nameof(Popup),3f);
+            }
         }
     }
     
@@ -67,6 +75,24 @@ public class ScoreController : MonoBehaviour
                 mathPer=1;
             }
             text.DOText("総合獲得ずんだ餅は...\n"+scoreTotal+"個!\n総合ランキング..."+rank+"位\n\n上位"+mathPer+"%の実力です!",4f);
+
+    }
+    public void PopupClear(){
+            image.DOFade(1,1f);
+
+            mathPerF=(rankIn/id)*100;
+            mathPer=(int)mathPerF;
+            if (mathPer==0)
+            {
+                mathPer=1;
+            }
+            text.DOText("総合獲得ずんだ餅は...\nLevel1... "+score1+"\nLevel2... "+score2+"\nLevel3... "+score3+"\n\n合計は..."+scoreTotal+"個!\n総合ランキング..."+rank+"位\n上位"+mathPer+"%の実力です!\nPress SpaceKey!",5f);
+
+            score1=0;
+            score2=0;
+            score3=0;
+            scoreTotal=0;
+
 
     }
 

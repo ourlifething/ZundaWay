@@ -39,6 +39,10 @@ public class GameControllerLevel2 : MonoBehaviour
     public Image zunda;
     public Image popupMini;
     public GameObject clearEdamame;
+    void Awake()
+    {
+        DOTween.Init();
+    }
     void Start()
     {
         Ready();
@@ -91,7 +95,7 @@ public class GameControllerLevel2 : MonoBehaviour
     void GameStart()
     {
         state = State.Play;
-        zunda.DOFade(0,0.1f);
+        zunda.gameObject.SetActive(false);
         popup.DOFade(0,0.5f);
         popupMini.DOFade(1,0.1f);
         startText.gameObject.SetActive(true);
@@ -141,7 +145,7 @@ public class GameControllerLevel2 : MonoBehaviour
     void Clear()
     {
         state = State.Clear;
-        gameOverText.text = "クリア!\nPress Space Key";
+        gameOverText.text = "クリア!\nPress SpaceKey!";
         popupMini.DOFade(1,0.1f);
         gameOverText.gameObject.SetActive(true);
         mondazun.SpriteChange();
