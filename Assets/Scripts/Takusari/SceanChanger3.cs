@@ -9,9 +9,11 @@ public class SceanChanger3 : MonoBehaviour
 {
     public GameObject Makuhiki;
     private SpriteRenderer spriteRenderer;
+   // public Canvas canvas;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //canvas = GetComponent<Canvas>();
     }
 
     void Update()
@@ -32,5 +34,6 @@ public class SceanChanger3 : MonoBehaviour
     void WhiteOut()
     {
         spriteRenderer.DOFade(1.0f,3.0f);
+        //canvas.enabled = false;
     }
 }

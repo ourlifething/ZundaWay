@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Makuhiki: {fileID: 2162756193824044091, guid: bf049e692b502f74f8b1cf0aae8d6330, type: 3}
+  canvas: {fileID: 1253557039}
 --- !u!212 &1018079423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -757,7 +758,6 @@ GameObject:
   - component: {fileID: 1412188246}
   - component: {fileID: 1412188245}
   - component: {fileID: 1412188244}
-  - component: {fileID: 1412188247}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -831,19 +831,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1412188247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412188243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab29349940b7fa48b8f223cf2c8e159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Makuhiki: {fileID: 2162756193824044091, guid: bf049e692b502f74f8b1cf0aae8d6330, type: 3}
 --- !u!1 &1567255736
 GameObject:
   m_ObjectHideFlags: 0

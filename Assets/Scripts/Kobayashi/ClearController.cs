@@ -9,6 +9,7 @@ public class ClearController : MonoBehaviour
     public Image logo;
     public Image logoBack;
     public ScoreController scon;
+    private Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,15 @@ public class ClearController : MonoBehaviour
         .SetDelay(2f);
 
         scon.ScoreTotal();
-        
+        canvas = GetComponent<Canvas>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            canvas.enabled = false;
+        }
     }
 }
