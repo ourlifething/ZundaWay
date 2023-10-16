@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEditor.Build.Reporting;
 
 public class SoundManager : MonoBehaviour
 
@@ -12,12 +13,14 @@ public class SoundManager : MonoBehaviour
     private bool StartButtonClicked = false;
     //遊び方ボタンがクリックされている状態かどうか
     private bool AsobikataButtonClicked = false;
+   
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
         audioStart = GetComponents<AudioSource>();
-        audioStart[0].Play();
 
         // 落下音再生タイミング
         Invoke("PlayAudioAfterDelay", 0.8f);
@@ -55,7 +58,13 @@ public class SoundManager : MonoBehaviour
     {
         AsobikataButtonClicked = true;
         audioStart[4].Play();
-        SceneManager.LoadScene("HowToPlay");
+
+        //遊び方ボタンの音声の長さを取得
+        float howToPlaytButtonSoundLength = audioStart[4].clip.length;
+
+        // 音声再生の終了を待ってから画面遷移
+        StartCoroutine(LoadHowToPlayAfterSoundLength(howToPlaytButtonSoundLength));
+
         //クリックされたらゲーム説明を中止
         audioStart[1].Pause();
         //クリックされたらタイトルコールを中止
@@ -65,12 +74,18 @@ public class SoundManager : MonoBehaviour
         CancelInvoke("VoiceGameDescription");
         CancelInvoke("VoiceTitleCall");
     }
+
     //スタートボタンがクリックされたら
     public void OnClickStart()
     {
         StartButtonClicked = true;
         audioStart[5].Play();
-        SceneManager.LoadScene("Level1");
+
+        // スタートボタンの音声の長さを取得
+        float startButtonSoundLength = audioStart[5].clip.length;
+
+        // 音声再生の終了を待ってから画面遷移
+        StartCoroutine(LoadLevel1AfterSoundLength(startButtonSoundLength));
 
         //クリックされたらゲーム説明を中止
         audioStart[1].Pause();
@@ -80,5 +95,16 @@ public class SoundManager : MonoBehaviour
         // スタートボタンがクリックされたら、ゲームの説明 or タイトルコールをキャンセル
         CancelInvoke("VoiceGameDescription");
         CancelInvoke("VoiceTitleCall");
+    }
+    IEnumerator LoadHowToPlayAfterSoundLength(float soundLength)
+    {
+        yield return new WaitForSeconds(soundLength);
+        SceneManager.LoadScene("HowToPlay");
+    }
+
+    IEnumerator LoadLevel1AfterSoundLength(float soundLength)
+    {
+        yield return new WaitForSeconds(soundLength);
+        SceneManager.LoadScene("Level1");
     }
 }
