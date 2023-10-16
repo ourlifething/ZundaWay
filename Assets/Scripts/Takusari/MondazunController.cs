@@ -34,6 +34,7 @@ public class MondazunController : MonoBehaviour
     public GameObject ExplosionEffect;
     private Sequence sequence;
     private Sequence sequence2;
+    private Sequence sequence3;
     private SpriteRenderer spriteRender;
     public Sprite clearSprite;
     private Animator anim;
@@ -56,7 +57,12 @@ public class MondazunController : MonoBehaviour
             .Pause()
             .SetAutoKill(false);
 
-        //SpriteRenderer = GetComponent<SpriteRenderer>();
+        sequence3 = DOTween.Sequence()
+        .Append(transform.DOShakeRotation(1f, 90f, 60, 90, true))
+        .Append(spriteRender.DOColor(Color.gray,1.0f))
+        .Append(transform.DORotate(new Vector3(0,0,90),1.0f))
+            .Pause()
+            .SetAutoKill(false); 
     }
 
     public void SetSteerActive(bool steerActive)
@@ -124,18 +130,7 @@ public class MondazunController : MonoBehaviour
             this.GetComponent<Animator>().enabled = false;
             FinalExplosion();
             sequence2.Play();
-            //SpriteRenderer.color = new Color32(80,80,80,255);
-            
-
-            //Invoke("FalledMiss",2.0f);
         }
-        /*void FalledMiss()
-        {
-            SceneManager.LoadScene("Miss");
-        }
-        */
-
-
     }
     void Recover()
     {
@@ -155,6 +150,12 @@ public class MondazunController : MonoBehaviour
         anim.enabled = false;
         spriteRender.sprite = clearSprite;
         Debug.Log("o");
+    }
+
+    public void normaDame()
+    {
+        this.GetComponent<Animator>().enabled = false;
+        sequence3.Play();
     }
 
 }
