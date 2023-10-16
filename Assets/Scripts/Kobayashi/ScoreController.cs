@@ -40,7 +40,7 @@ public class ScoreController : MonoBehaviour
     IEnumerator PostConnect(){
         WWWForm form=new WWWForm();
         form.AddField("score",scoreTotal);
-        string url="http://localhost:8080/ScoreAPI/GetRanking";
+        string url="http://192.168.11.25:8080/ScoreAPI/GetRanking";
         UnityWebRequest uwr=UnityWebRequest.Post(url,form);
         Debug.Log(form);
         yield return uwr.SendWebRequest();
