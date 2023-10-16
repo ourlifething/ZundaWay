@@ -8,9 +8,10 @@ using DG.Tweening;
 public class SceanChanger3 : MonoBehaviour
 {
     public GameObject Makuhiki;
+    private SpriteRenderer spriteRenderer;
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -19,11 +20,17 @@ public class SceanChanger3 : MonoBehaviour
         {
             Instantiate(Makuhiki, new Vector3(0,0,0), Quaternion.identity);
 
-            SceanChange();
+            Invoke("SceanChange", 4.0f);
+            Invoke("WhiteOut",2.0f);
         }
     }
     void SceanChange()
     {
         SceneManager.LoadScene("Start");
+    }
+
+    void WhiteOut()
+    {
+        spriteRenderer.DOFade(1.0f,3.0f);
     }
 }
