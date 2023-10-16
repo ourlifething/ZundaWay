@@ -113,12 +113,13 @@ public class GameControllerLevel1 : MonoBehaviour
         int thisScore = ucon.getScore();
         if (mondazun.Miss())
         {
-            gameOverText.text = "ゲームオーバー...";
+            gameOverText.text = "ゲームオーバー...\nPress SpaceKey!";
         }
         if (count <= 0 && thisScore < normaScore)
         {
-            gameOverText.text = "ノルマ未達成...\nあと" + (normaScore - thisScore) + "個";
-            mondazun.normaDame();
+            gameOverText.text = "ノルマ未達成...\nあと" + (normaScore - thisScore) + "個\nPress SpaceKey!";
+						mondazun.normaDame();
+
         }
 
         popupMini.DOFade(1,0.1f);
