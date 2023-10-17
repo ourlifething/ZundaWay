@@ -139,7 +139,7 @@ public class GameControllerLevel1 : MonoBehaviour
         {
             Destroy(obj);
         }
-        ScoreController.score1+=ucon.getScore();
+        ScoreController.score1=ucon.getScore();
         ScoreController.scoreTotal+=ScoreController.score1;
         scon.ScoreTotal();
     }
@@ -166,7 +166,7 @@ public class GameControllerLevel1 : MonoBehaviour
         {
             Destroy(obj);
         }
-        ScoreController.score1+=ucon.getScore();
+        ScoreController.score1=ucon.getScore();
         ScoreController.scoreTotal+=ScoreController.score1;
 
     }
@@ -176,7 +176,7 @@ public class GameControllerLevel1 : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
         ScoreController.scoreTotal=0;
-        ScoreController.score1+=0;
+        ScoreController.score1=0;
     }
     void FalText()
     {

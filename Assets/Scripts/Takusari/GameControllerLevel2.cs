@@ -139,7 +139,7 @@ public class GameControllerLevel2 : MonoBehaviour
         {
             Destroy(obj);
         }
-        ScoreController.score2+=ucon.getScore();
+        ScoreController.score2=ucon.getScore();
         ScoreController.scoreTotal+=ScoreController.score2;
         scon.ScoreTotal();
     }
@@ -167,7 +167,7 @@ public class GameControllerLevel2 : MonoBehaviour
         {
             Destroy(obj);
         }
-        ScoreController.score2+=ucon.getScore();
+        ScoreController.score2=ucon.getScore();
         ScoreController.scoreTotal+=ScoreController.score2;
     }
     void Reload()
